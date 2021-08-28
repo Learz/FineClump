@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/pu.wav-77b1efc60cc2c5e060d284607b4d4981.sample"
+
+[deps]
+
+source_file="res://sound/pu.wav"
+dest_files=[ "res://.import/pu.wav-77b1efc60cc2c5e060d284607b4d4981.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

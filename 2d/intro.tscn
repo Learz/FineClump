@@ -1,0 +1,200 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://2d/king.tscn" type="PackedScene" id=1]
+[ext_resource path="res://2d/katamari_font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://2d/NewPatagonia-Normal.otf" type="DynamicFontData" id=4]
+[ext_resource path="res://2d/logo.png" type="Texture" id=5]
+
+[sub_resource type="Animation" id=1]
+resource_name = "intro"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("logo:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3.5, 4.3, 6.5, 7.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("king:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 7.5, 7.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("controller:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.8, 2.2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("king:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 7.1, 8.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("king_text:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 7.4, 7.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, false, true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("king_text:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 7.4, 8.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.899669, 0.453461, 0.914063, 0 ), Color( 0.899669, 0.453461, 0.914063, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "text_fade"
+tracks/0/type = "value"
+tracks/0/path = NodePath("king_text:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.899669, 0.453461, 0.914063, 1 ), Color( 0.899669, 0.453461, 0.914063, 0 ), Color( 0.899669, 0.453461, 0.914063, 1 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("king:next_text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "next_text"
+} ]
+}
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 4 )
+
+[node name="intro" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1284.0
+margin_bottom = 734.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="king" parent="." instance=ExtResource( 1 )]
+margin_left = 640.0
+margin_top = 234.0
+margin_right = 680.0
+margin_bottom = 274.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/intro = SubResource( 1 )
+anims/text_fade = SubResource( 2 )
+
+[node name="controller" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 1280.0
+margin_bottom = 718.0
+custom_fonts/font = ExtResource( 3 )
+text = "a controller is required to play"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="logo" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 1280.0
+margin_bottom = 506.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 1, 0.364706, 0.364706, 1 )
+text = "Katamari Damashi"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="king_text2" type="Label" parent="logo"]
+margin_left = 11.0
+margin_top = 623.0
+margin_right = 1280.0
+margin_bottom = 746.0
+custom_fonts/font = SubResource( 3 )
+text = "Akamonkai PROTOTYPE V0.2
+Not affiliated with KATAMARI DAMACY or BANDAI NAMCO
+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="logo"]
+modulate = Color( 1, 0.435294, 0.435294, 1 )
+position = Vector2( 637.656, 382.726 )
+scale = Vector2( 0.532735, 0.532735 )
+texture = ExtResource( 5 )
+
+[node name="king_text" type="Label" parent="."]
+modulate = Color( 0.899669, 0.453461, 0.914063, 1 )
+margin_top = 127.0
+margin_right = 1280.0
+margin_bottom = 718.0
+custom_fonts/font = SubResource( 3 )
+text = "Hello my princely son"
+align = 1
+valign = 1
+
+[node name="king_text2" type="Label" parent="king_text"]
+margin_left = 929.0
+margin_top = 552.0
+margin_right = 1280.0
+margin_bottom = 591.0
+custom_fonts/font = SubResource( 3 )
+text = "press (A) to continue"
+align = 1
+valign = 1

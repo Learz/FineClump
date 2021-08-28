@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/katamari_snowday.ogg-d6d1b843587b4dc4b3f46398c6e240be.oggstr"
+
+[deps]
+
+source_file="res://sound/music/katamari_snowday.ogg"
+dest_files=[ "res://.import/katamari_snowday.ogg-d6d1b843587b4dc4b3f46398c6e240be.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

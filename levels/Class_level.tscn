@@ -1,0 +1,704 @@
+[gd_scene load_steps=47 format=2]
+
+[ext_resource path="res://levels/main_level.gd" type="Script" id=1]
+[ext_resource path="res://player/cam_loc.tscn" type="PackedScene" id=2]
+[ext_resource path="res://obj/Everything/Geology/GreenHillHuge.001.glb" type="PackedScene" id=4]
+[ext_resource path="res://2d/show_controls.tscn" type="PackedScene" id=5]
+[ext_resource path="res://obj/Everything/Geology/GreenHillLarge.003.glb" type="PackedScene" id=6]
+[ext_resource path="res://obj/Everything/Geology/GreenPlateauTiny.003.glb" type="PackedScene" id=7]
+[ext_resource path="res://obj/classroom.glb" type="PackedScene" id=8]
+[ext_resource path="res://obj/Everything/Furnishing/SchoolTable.glb" type="PackedScene" id=9]
+[ext_resource path="res://obj/Everything/Furnishing/SchoolChair.glb" type="PackedScene" id=10]
+[ext_resource path="res://player/katamari_physics.tscn" type="PackedScene" id=11]
+[ext_resource path="res://sound/music/another_day_another_clump.mp3" type="AudioStream" id=12]
+[ext_resource path="res://obj/Everything/Custom/Clock.glb" type="PackedScene" id=13]
+[ext_resource path="res://obj/Everything/Furnishing/WoodenTable.glb" type="PackedScene" id=14]
+[ext_resource path="res://obj/赤門会.tscn" type="PackedScene" id=15]
+[ext_resource path="res://levels/Presentation.tscn" type="PackedScene" id=16]
+[ext_resource path="res://obj/Everything/Custom/Magnet.003.glb" type="PackedScene" id=17]
+[ext_resource path="res://obj/Everything/Custom/Magnet.002.glb" type="PackedScene" id=18]
+[ext_resource path="res://2d/NewPatagonia-Normal.otf" type="DynamicFontData" id=19]
+[ext_resource path="res://obj/Everything/Custom/Magnet.005.glb" type="PackedScene" id=20]
+[ext_resource path="res://obj/Everything/Custom/Pen.001.glb" type="PackedScene" id=21]
+[ext_resource path="res://obj/Everything/Custom/Pen.002.glb" type="PackedScene" id=22]
+[ext_resource path="res://sound/music/bg_noise.ogg" type="AudioStream" id=23]
+[ext_resource path="res://2d/king_ending.tscn" type="PackedScene" id=24]
+[ext_resource path="res://obj/Everything/Custom/Pencil.001.glb" type="PackedScene" id=25]
+[ext_resource path="res://obj/Everything/Custom/Marker.glb" type="PackedScene" id=26]
+[ext_resource path="res://obj/Everything/Custom/eraser.glb" type="PackedScene" id=27]
+[ext_resource path="res://obj/Everything/Custom/Magnet.001.glb" type="PackedScene" id=28]
+[ext_resource path="res://obj/Everything/Custom/Magnet.004.glb" type="PackedScene" id=29]
+[ext_resource path="res://obj/Everything/Furnishing/Deskfan.glb" type="PackedScene" id=30]
+[ext_resource path="res://obj/Everything/Furnishing/CandyWrapper001.glb" type="PackedScene" id=31]
+[ext_resource path="res://obj/Everything/Furnishing/CandyWrapper002.glb" type="PackedScene" id=32]
+[ext_resource path="res://obj/Everything/Furnishing/CandyWrapper003.glb" type="PackedScene" id=33]
+[ext_resource path="res://obj/Everything/Furnishing/CandyWrapper004.glb" type="PackedScene" id=34]
+[ext_resource path="res://obj/Everything/Furnishing/CandyWrapper008.glb" type="PackedScene" id=35]
+[ext_resource path="res://obj/Everything/Furnishing/CandyWrapper007.glb" type="PackedScene" id=36]
+[ext_resource path="res://obj/Everything/Furnishing/CandyWrapper005.glb" type="PackedScene" id=37]
+[ext_resource path="res://obj/Everything/Furnishing/CandyWrapper006.glb" type="PackedScene" id=38]
+[ext_resource path="res://obj/Everything/Furnishing/SimpleBridge.glb" type="PackedScene" id=39]
+[ext_resource path="res://obj/Everything/Furnishing/TrashCan.glb" type="PackedScene" id=40]
+[ext_resource path="res://obj/Everything/Custom/TV Stand.glb" type="PackedScene" id=41]
+[ext_resource path="res://obj/Everything/Custom/Whiteboard.glb" type="PackedScene" id=42]
+[ext_resource path="res://obj/Everything/Custom/TV.glb" type="PackedScene" id=43]
+
+[sub_resource type="PhysicsMaterial" id=2]
+bounce = 0.1
+
+[sub_resource type="Animation" id=3]
+length = 20.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("king:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("king:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("king/king_text:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3.5, 6.5, 9.2, 12 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "color me impressed little green one, that is quite the snowball", "Let's see how it looks 'in action'!
+", "Absolutely stunning! Magnifico! Wunderbar!  Your finest work.", "Thank you for playing this silly game with me.", "Good night!" ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ending_camera:current")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 4.3, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("ending_camera:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 4.3, 6.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -68.2909, 0, 0 ), Vector3( 21.6809, 0, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("katamari_physics:translation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 5 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector3( -23.1805, 23.3898, -39.7565 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+tracks/0/type = "value"
+tracks/0/path = NodePath("katamari_physics:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 42.9179, 10.7877, 19.2242 ) ]
+}
+
+[sub_resource type="DynamicFont" id=5]
+size = 28
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 19 )
+
+[node name="level" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="sun" type="DirectionalLight" parent="."]
+transform = Transform( -0.100732, 0.755003, 0.647938, 0, -0.651251, 0.758863, 0.994914, 0.0764417, 0.0656018, 0, 22.6525, 0 )
+light_specular = 0.0
+directional_shadow_max_distance = 200.0
+
+[node name="cam_loc" parent="." instance=ExtResource( 2 )]
+
+[node name="katamari_physics" parent="." instance=ExtResource( 11 )]
+transform = Transform( -2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, -23.1805, 23.3898, -39.7565 )
+physics_material_override = SubResource( 2 )
+can_sleep = false
+axis_lock_angular_y = true
+
+[node name="bg_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+volume_db = -4.0
+
+[node name="bg_noise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 23 )
+volume_db = -5.0
+
+[node name="ending_camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.369894, 0.929074, 0, -0.929074, 0.369894, -20.2408, 4.00012, -0.0466399 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/ending = SubResource( 3 )
+anims/reset = SubResource( 4 )
+
+[node name="DYN_OBJ" type="Spatial" parent="."]
+
+[node name="GreenHillLarge004" parent="DYN_OBJ" instance=ExtResource( 6 )]
+transform = Transform( 2.99435, 0, 0.183982, 0, 3, 0, -0.183982, 0, 2.99435, -85.6619, -17.2223, -25.2552 )
+
+[node name="GreenHillHuge001" parent="DYN_OBJ" instance=ExtResource( 4 )]
+transform = Transform( 3.84471, 0, 3.19659, 0, 5, 0, -3.19659, 0, 3.84471, -49.2591, -24.7293, -86.5909 )
+
+[node name="GreenHillLarge003" parent="DYN_OBJ" instance=ExtResource( 6 )]
+transform = Transform( -0.349249, 0, -3.98472, 0, 4, 0, 3.98472, 0, -0.349249, 52.4185, -6.71338, -105.627 )
+
+[node name="GreenPlateauTiny003" parent="DYN_OBJ" instance=ExtResource( 7 )]
+transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 5, -1.96818, -6.21703, -19.5249 )
+
+[node name="classroom" parent="DYN_OBJ" instance=ExtResource( 8 )]
+transform = Transform( -1.62921e-07, -3.25841e-07, 1, 0, -1, -3.25841e-07, 1, -5.30863e-14, 1.62921e-07, 3.23963, 8.12033, 24.7306 )
+
+[node name="赤門会" parent="DYN_OBJ" instance=ExtResource( 15 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.54391, 5.66455, 16.7315 )
+
+[node name="Desks" type="Spatial" parent="DYN_OBJ"]
+
+[node name="SchoolChair" parent="DYN_OBJ/Desks" instance=ExtResource( 10 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11.0846, 0.133071, 34.4261 )
+
+[node name="SchoolTable" parent="DYN_OBJ/Desks" instance=ExtResource( 9 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.53688, -9.53674e-07, 34.5262 )
+
+[node name="SchoolChair2" parent="DYN_OBJ/Desks" instance=ExtResource( 10 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.39548, 0.133071, 34.4261 )
+
+[node name="SchoolTable2" parent="DYN_OBJ/Desks" instance=ExtResource( 9 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.15226, -9.53674e-07, 34.5262 )
+
+[node name="SchoolChair3" parent="DYN_OBJ/Desks" instance=ExtResource( 10 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.31682, 0.133071, 34.4261 )
+
+[node name="SchoolTable3" parent="DYN_OBJ/Desks" instance=ExtResource( 9 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12.8646, -9.53674e-07, 34.5262 )
+
+[node name="SchoolChair4" parent="DYN_OBJ/Desks" instance=ExtResource( 10 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 19.3979, 0.133071, -0.966976 )
+
+[node name="SchoolTable4" parent="DYN_OBJ/Desks" instance=ExtResource( 9 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14.8502, -9.53674e-07, -0.866863 )
+
+[node name="SchoolTable15" parent="DYN_OBJ/Desks" instance=ExtResource( 9 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 25.9398, -9.53674e-07, -0.866863 )
+
+[node name="SchoolChair5" parent="DYN_OBJ/Desks" instance=ExtResource( 10 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9.70875, 0.133071, -0.966976 )
+
+[node name="SchoolTable5" parent="DYN_OBJ/Desks" instance=ExtResource( 9 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.16101, -9.53674e-07, -0.866863 )
+
+[node name="SchoolChair6" parent="DYN_OBJ/Desks" instance=ExtResource( 10 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.00355148, 0.133071, -0.966976 )
+
+[node name="SchoolTable6" parent="DYN_OBJ/Desks" instance=ExtResource( 9 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.5513, -9.53674e-07, -0.866863 )
+
+[node name="SchoolTable13" parent="DYN_OBJ/Desks" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.055, -1.90735e-06, -1.40735 )
+
+[node name="SchoolTable14" parent="DYN_OBJ/Desks" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.7922, -1.90735e-06, -1.40735 )
+
+[node name="SchoolChair7" parent="DYN_OBJ/Desks" instance=ExtResource( 10 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 16.6372, 0.133071, 11.3437 )
+
+[node name="SchoolTable7" parent="DYN_OBJ/Desks" instance=ExtResource( 9 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12.0895, -9.53674e-07, 11.4438 )
+
+[node name="SchoolChair8" parent="DYN_OBJ/Desks" instance=ExtResource( 10 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.9481, 0.133071, 11.3437 )
+
+[node name="SchoolTable8" parent="DYN_OBJ/Desks" instance=ExtResource( 9 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.40036, -9.53674e-07, 11.4438 )
+
+[node name="SchoolChair9" parent="DYN_OBJ/Desks" instance=ExtResource( 10 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.7642, 0.133071, 11.3437 )
+
+[node name="SchoolTable9" parent="DYN_OBJ/Desks" instance=ExtResource( 9 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.31195, -9.53674e-07, 11.4438 )
+
+[node name="SchoolChair10" parent="DYN_OBJ/Desks" instance=ExtResource( 10 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 16.6372, 0.133071, 22.5259 )
+
+[node name="SchoolTable10" parent="DYN_OBJ/Desks" instance=ExtResource( 9 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12.0895, -9.53674e-07, 22.6261 )
+
+[node name="SchoolChair11" parent="DYN_OBJ/Desks" instance=ExtResource( 10 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.9481, 0.133071, 22.5259 )
+
+[node name="SchoolTable11" parent="DYN_OBJ/Desks" instance=ExtResource( 9 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.40036, -9.53674e-07, 22.6261 )
+
+[node name="SchoolChair12" parent="DYN_OBJ/Desks" instance=ExtResource( 10 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.7642, 0.133071, 22.5259 )
+
+[node name="SchoolTable12" parent="DYN_OBJ/Desks" instance=ExtResource( 9 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.31195, -9.53674e-07, 22.6261 )
+
+[node name="WoodenTable" parent="DYN_OBJ/Desks" instance=ExtResource( 14 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, -15.6027, 0.0993838, 16.8316 )
+
+[node name="Marker" parent="DYN_OBJ/Desks" instance=ExtResource( 26 )]
+transform = Transform( -0.980608, 0, -0.195981, 0, 1, 0, 0.195981, 0, -0.980608, -17.042, 7.10636, 13.9366 )
+
+[node name="Marker2" parent="DYN_OBJ/Desks" instance=ExtResource( 26 )]
+transform = Transform( -0.998385, 0, 0.0568147, 0, 1, 0, -0.0568147, 0, -0.998385, -17.0528, 7.10636, 14.2597 )
+
+[node name="Marker3" parent="DYN_OBJ/Desks" instance=ExtResource( 26 )]
+transform = Transform( -0.970456, 0, -0.241278, 0, 1, 0, 0.241278, 0, -0.970456, -16.9473, 7.10636, 14.6331 )
+
+[node name="Marker4" parent="DYN_OBJ/Desks" instance=ExtResource( 26 )]
+transform = Transform( -0.998602, 0, -0.052859, 0, 1, 0, 0.052859, 0, -0.998602, -17.029, 7.10636, 14.9637 )
+
+[node name="Magnet001" parent="DYN_OBJ/Desks" instance=ExtResource( 28 )]
+transform = Transform( 0.470812, 0, -0.882234, 0, 1, 0, 0.882234, 0, 0.470812, -16.8123, 7.11106, 20.3328 )
+
+[node name="Magnet002" parent="DYN_OBJ/Desks" instance=ExtResource( 28 )]
+transform = Transform( 0.470812, 0, -0.882234, 0, 1, 0, 0.882234, 0, 0.470812, -17.5485, 7.11106, 19.1834 )
+
+[node name="Magnet003" parent="DYN_OBJ/Desks" instance=ExtResource( 18 )]
+transform = Transform( 0.470812, 0, -0.882234, 0, 1, 0, 0.882234, 0, 0.470812, -17.1787, 7.11106, 20.0879 )
+
+[node name="Magnet004" parent="DYN_OBJ/Desks" instance=ExtResource( 17 )]
+transform = Transform( 0.470812, 0, -0.882234, 0, 1, 0, 0.882234, 0, 0.470812, -16.9626, 7.11106, 19.4466 )
+
+[node name="Magnet005" parent="DYN_OBJ/Desks" instance=ExtResource( 29 )]
+transform = Transform( 0.470812, 0, -0.882234, 0, 1, 0, 0.882234, 0, 0.470812, -16.3067, 7.11106, 20.2578 )
+
+[node name="Magnet006" parent="DYN_OBJ/Desks" instance=ExtResource( 20 )]
+transform = Transform( 0.470812, 0, -0.882234, 0, 1, 0, 0.882234, 0, 0.470812, -16.6816, 7.11106, 19.9267 )
+
+[node name="Magnet007" parent="DYN_OBJ/Desks" instance=ExtResource( 28 )]
+transform = Transform( 0.470812, 0, -0.882234, 0, 1, 0, 0.882234, 0, 0.470812, -17.0311, 7.11106, 18.9706 )
+
+[node name="Magnet008" parent="DYN_OBJ/Desks" instance=ExtResource( 20 )]
+transform = Transform( 0.470812, 0, -0.882234, 0, 1, 0, 0.882234, 0, 0.470812, -17.5085, 7.11106, 19.7035 )
+
+[node name="Magnet009" parent="DYN_OBJ/Desks" instance=ExtResource( 28 )]
+transform = Transform( -0.571788, 0, 0.820402, 0, 1, 0, -0.820402, 0, -0.571788, -16.9, 7.11106, 17.95 )
+
+[node name="Magnet010" parent="DYN_OBJ/Desks" instance=ExtResource( 28 )]
+transform = Transform( -0.571788, 0, 0.820402, 0, 1, 0, -0.820402, 0, -0.571788, -16.0331, 7.11106, 19.0042 )
+
+[node name="Magnet011" parent="DYN_OBJ/Desks" instance=ExtResource( 18 )]
+transform = Transform( -0.571788, 0, 0.820402, 0, 1, 0, -0.820402, 0, -0.571788, -16.5072, 7.11106, 18.1498 )
+
+[node name="Magnet012" parent="DYN_OBJ/Desks" instance=ExtResource( 17 )]
+transform = Transform( -0.571788, 0, 0.820402, 0, 1, 0, -0.820402, 0, -0.571788, -16.646, 7.11106, 18.8121 )
+
+[node name="Magnet013" parent="DYN_OBJ/Desks" instance=ExtResource( 29 )]
+transform = Transform( -0.571788, 0, 0.820402, 0, 1, 0, -0.820402, 0, -0.571788, -17.3932, 7.11106, 18.0842 )
+
+[node name="Magnet014" parent="DYN_OBJ/Desks" instance=ExtResource( 20 )]
+transform = Transform( -0.571788, 0, 0.820402, 0, 1, 0, -0.820402, 0, -0.571788, -16.9818, 7.11106, 18.3687 )
+
+[node name="Magnet015" parent="DYN_OBJ/Desks" instance=ExtResource( 28 )]
+transform = Transform( -0.571788, 0, 0.820402, 0, 1, 0, -0.820402, 0, -0.571788, -16.5217, 7.11106, 19.2767 )
+
+[node name="Magnet016" parent="DYN_OBJ/Desks" instance=ExtResource( 20 )]
+transform = Transform( -0.571788, 0, 0.820402, 0, 1, 0, -0.820402, 0, -0.571788, -16.1344, 7.11106, 18.4925 )
+
+[node name="Pen001" parent="DYN_OBJ/Desks" instance=ExtResource( 21 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14.2856, 7.10636, 14.223 )
+
+[node name="Pen003" parent="DYN_OBJ/Desks" instance=ExtResource( 21 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14.0981, 7.10636, 14.223 )
+
+[node name="Pen004" parent="DYN_OBJ/Desks" instance=ExtResource( 21 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -13.9151, 7.10636, 14.223 )
+
+[node name="Pen002" parent="DYN_OBJ/Desks" instance=ExtResource( 22 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14.5054, 7.10636, 14.2252 )
+
+[node name="eraser" parent="DYN_OBJ/Desks" instance=ExtResource( 27 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -15.5521, 7.09302, 13.6109 )
+
+[node name="eraser2" parent="DYN_OBJ/Desks" instance=ExtResource( 27 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -15.5521, 7.09302, 13.9801 )
+
+[node name="eraser3" parent="DYN_OBJ/Desks" instance=ExtResource( 27 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -15.5521, 7.09302, 14.3517 )
+
+[node name="eraser4" parent="DYN_OBJ/Desks" instance=ExtResource( 27 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -15.5521, 7.09302, 14.7483 )
+
+[node name="eraser5" parent="DYN_OBJ/Desks" instance=ExtResource( 27 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -15.5521, 7.09302, 15.14 )
+
+[node name="eraser6" parent="DYN_OBJ/Desks" instance=ExtResource( 27 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -15.5521, 7.09302, 15.5727 )
+
+[node name="Deskfan" parent="DYN_OBJ/Desks" instance=ExtResource( 30 )]
+transform = Transform( -0.551559, 0, -0.834136, 0, 1, 0, 0.834136, 0, -0.551559, -14.1205, 7.09921, 19.7528 )
+
+[node name="Floor" type="Spatial" parent="DYN_OBJ"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.34446, 0.711515, 17.309 )
+
+[node name="CandyWrapper002" parent="DYN_OBJ/Floor" instance=ExtResource( 31 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.843726, -0.46426, 0.129473 )
+
+[node name="CandyWrapper003" parent="DYN_OBJ/Floor" instance=ExtResource( 32 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.902956, -0.478187, -0.590982 )
+
+[node name="CandyWrapper004" parent="DYN_OBJ/Floor" instance=ExtResource( 33 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.49521, -0.500087, 0.333258 )
+
+[node name="CandyWrapper005" parent="DYN_OBJ/Floor" instance=ExtResource( 34 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.21039, -0.498151, 0.0647392 )
+
+[node name="CandyWrapper006" parent="DYN_OBJ/Floor" instance=ExtResource( 38 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.06158, -0.451873, -0.468544 )
+
+[node name="CandyWrapper008" parent="DYN_OBJ/Floor" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.39871, -0.508883, 0.282438 )
+
+[node name="CandyWrapper007" parent="DYN_OBJ/Floor" instance=ExtResource( 36 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54538, -0.466888, -0.323721 )
+
+[node name="CandyWrapper009" parent="DYN_OBJ/Floor" instance=ExtResource( 37 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.01998, -0.493981, 0.63979 )
+
+[node name="CandyWrapper010" parent="DYN_OBJ/Floor" instance=ExtResource( 31 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.64678, -0.46426, 0.129473 )
+
+[node name="CandyWrapper011" parent="DYN_OBJ/Floor" instance=ExtResource( 32 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.70601, -0.478187, -0.590982 )
+
+[node name="CandyWrapper012" parent="DYN_OBJ/Floor" instance=ExtResource( 33 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.29826, -0.500087, 0.333258 )
+
+[node name="CandyWrapper013" parent="DYN_OBJ/Floor" instance=ExtResource( 34 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.59439, -0.498151, -0.227947 )
+
+[node name="CandyWrapper014" parent="DYN_OBJ/Floor" instance=ExtResource( 38 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.67934, -0.451873, 0.874737 )
+
+[node name="CandyWrapper015" parent="DYN_OBJ/Floor" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.20176, -0.508883, 0.282438 )
+
+[node name="CandyWrapper016" parent="DYN_OBJ/Floor" instance=ExtResource( 36 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.34389, -0.466888, 0.581886 )
+
+[node name="CandyWrapper017" parent="DYN_OBJ/Floor" instance=ExtResource( 37 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.18131, -0.493981, -0.686794 )
+
+[node name="CandyWrapper018" parent="DYN_OBJ/Floor" instance=ExtResource( 31 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.14238, -0.46426, 0.129473 )
+
+[node name="CandyWrapper019" parent="DYN_OBJ/Floor" instance=ExtResource( 32 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.20161, -0.478187, -0.590982 )
+
+[node name="CandyWrapper020" parent="DYN_OBJ/Floor" instance=ExtResource( 33 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.79387, -0.500087, 0.333258 )
+
+[node name="CandyWrapper021" parent="DYN_OBJ/Floor" instance=ExtResource( 34 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.09, -0.276848, -0.743011 )
+
+[node name="CandyWrapper022" parent="DYN_OBJ/Floor" instance=ExtResource( 38 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.17856, -0.451873, -0.650768 )
+
+[node name="CandyWrapper023" parent="DYN_OBJ/Floor" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.69736, -0.508883, 0.282438 )
+
+[node name="CandyWrapper024" parent="DYN_OBJ/Floor" instance=ExtResource( 36 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.32, -0.466887, -0.357466 )
+
+[node name="CandyWrapper025" parent="DYN_OBJ/Floor" instance=ExtResource( 37 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0723, -0.493981, -0.201159 )
+
+[node name="CandyWrapper026" parent="DYN_OBJ/Floor" instance=ExtResource( 31 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5834, -0.46426, 0.129473 )
+
+[node name="CandyWrapper027" parent="DYN_OBJ/Floor" instance=ExtResource( 32 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4974, -0.478187, 0.348675 )
+
+[node name="CandyWrapper028" parent="DYN_OBJ/Floor" instance=ExtResource( 33 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2349, -0.500087, 0.333258 )
+
+[node name="CandyWrapper029" parent="DYN_OBJ/Floor" instance=ExtResource( 34 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.531, -0.498151, -0.227947 )
+
+[node name="CandyWrapper030" parent="DYN_OBJ/Floor" instance=ExtResource( 38 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7082, -0.451873, 0.943464 )
+
+[node name="CandyWrapper031" parent="DYN_OBJ/Floor" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4225, -0.508883, -0.912952 )
+
+[node name="CandyWrapper032" parent="DYN_OBJ/Floor" instance=ExtResource( 36 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.2805, -0.466888, 0.581886 )
+
+[node name="CandyWrapper033" parent="DYN_OBJ/Floor" instance=ExtResource( 37 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5133, -0.493981, -0.201159 )
+
+[node name="CandyWrapper034" parent="DYN_OBJ/Floor" instance=ExtResource( 31 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.6748, -0.46426, 0.129473 )
+
+[node name="CandyWrapper035" parent="DYN_OBJ/Floor" instance=ExtResource( 32 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.734, -0.478187, -0.590982 )
+
+[node name="CandyWrapper036" parent="DYN_OBJ/Floor" instance=ExtResource( 33 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.3262, -0.500087, 0.333258 )
+
+[node name="CandyWrapper037" parent="DYN_OBJ/Floor" instance=ExtResource( 34 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.0414, -0.498151, 0.0647392 )
+
+[node name="CandyWrapper038" parent="DYN_OBJ/Floor" instance=ExtResource( 38 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.8926, -0.451873, -0.468544 )
+
+[node name="CandyWrapper039" parent="DYN_OBJ/Floor" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.2297, -0.508883, 0.282438 )
+
+[node name="CandyWrapper040" parent="DYN_OBJ/Floor" instance=ExtResource( 36 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.3764, -0.466888, -0.323721 )
+
+[node name="CandyWrapper041" parent="DYN_OBJ/Floor" instance=ExtResource( 37 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.851, -0.493981, 0.63979 )
+
+[node name="CandyWrapper042" parent="DYN_OBJ/Floor" instance=ExtResource( 31 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.4778, -0.46426, 0.129473 )
+
+[node name="CandyWrapper043" parent="DYN_OBJ/Floor" instance=ExtResource( 32 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.537, -0.478187, -0.590982 )
+
+[node name="CandyWrapper044" parent="DYN_OBJ/Floor" instance=ExtResource( 33 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.1293, -0.500087, 0.333258 )
+
+[node name="CandyWrapper045" parent="DYN_OBJ/Floor" instance=ExtResource( 34 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21.4254, -0.498151, -0.227947 )
+
+[node name="CandyWrapper046" parent="DYN_OBJ/Floor" instance=ExtResource( 38 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5104, -0.451873, 0.874737 )
+
+[node name="CandyWrapper047" parent="DYN_OBJ/Floor" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0328, -0.508883, 0.282438 )
+
+[node name="CandyWrapper048" parent="DYN_OBJ/Floor" instance=ExtResource( 36 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.1749, -0.466888, 0.581886 )
+
+[node name="CandyWrapper049" parent="DYN_OBJ/Floor" instance=ExtResource( 37 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.0123, -0.493981, -0.686794 )
+
+[node name="CandyWrapper050" parent="DYN_OBJ/Floor" instance=ExtResource( 31 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.9734, -0.46426, 0.129473 )
+
+[node name="CandyWrapper051" parent="DYN_OBJ/Floor" instance=ExtResource( 32 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.0326, -0.478187, -0.590982 )
+
+[node name="CandyWrapper052" parent="DYN_OBJ/Floor" instance=ExtResource( 33 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.6249, -0.500087, 0.333258 )
+
+[node name="CandyWrapper053" parent="DYN_OBJ/Floor" instance=ExtResource( 34 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.921, -0.276848, -0.743011 )
+
+[node name="CandyWrapper054" parent="DYN_OBJ/Floor" instance=ExtResource( 38 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.0096, -0.451873, -0.650768 )
+
+[node name="CandyWrapper055" parent="DYN_OBJ/Floor" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5284, -0.508883, 0.282438 )
+
+[node name="CandyWrapper056" parent="DYN_OBJ/Floor" instance=ExtResource( 36 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.151, -0.466887, -0.357466 )
+
+[node name="CandyWrapper057" parent="DYN_OBJ/Floor" instance=ExtResource( 37 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.9033, -0.493981, -0.201159 )
+
+[node name="CandyWrapper058" parent="DYN_OBJ/Floor" instance=ExtResource( 31 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.4144, -0.46426, 0.129473 )
+
+[node name="CandyWrapper059" parent="DYN_OBJ/Floor" instance=ExtResource( 32 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.3284, -0.478187, 0.348675 )
+
+[node name="CandyWrapper060" parent="DYN_OBJ/Floor" instance=ExtResource( 33 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.0659, -0.500087, 0.333258 )
+
+[node name="CandyWrapper061" parent="DYN_OBJ/Floor" instance=ExtResource( 34 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.3621, -0.498151, -0.227947 )
+
+[node name="CandyWrapper062" parent="DYN_OBJ/Floor" instance=ExtResource( 38 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.5392, -0.451873, 0.943464 )
+
+[node name="CandyWrapper063" parent="DYN_OBJ/Floor" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.2535, -0.508883, -0.912952 )
+
+[node name="CandyWrapper064" parent="DYN_OBJ/Floor" instance=ExtResource( 36 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.4256, -0.466888, 1.1465 )
+
+[node name="CandyWrapper065" parent="DYN_OBJ/Floor" instance=ExtResource( 37 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.3444, -0.493981, -0.201159 )
+
+[node name="CandyWrapper066" parent="DYN_OBJ/Floor" instance=ExtResource( 31 )]
+transform = Transform( 0.591732, 0, -0.806135, 0, 1, 0, 0.806135, 0, 0.591732, 29.9527, -0.464261, 0.515617 )
+
+[node name="CandyWrapper067" parent="DYN_OBJ/Floor" instance=ExtResource( 32 )]
+transform = Transform( 0.591732, 0, -0.806135, 0, 1, 0, 0.806135, 0, 0.591732, 29.4506, -0.478188, 1.09053 )
+
+[node name="CandyWrapper068" parent="DYN_OBJ/Floor" instance=ExtResource( 33 )]
+transform = Transform( 0.591732, 0, -0.806135, 0, 1, 0, 0.806135, 0, 0.591732, 30.1739, -0.500088, 1.16139 )
+
+[node name="CandyWrapper069" parent="DYN_OBJ/Floor" instance=ExtResource( 34 )]
+transform = Transform( 0.591732, 0, -0.806135, 0, 1, 0, 0.806135, 0, 0.591732, 32.0716, -0.498152, 2.05064 )
+
+[node name="CandyWrapper070" parent="DYN_OBJ/Floor" instance=ExtResource( 38 )]
+transform = Transform( 0.591732, 0, -0.806135, 0, 1, 0, 0.806135, 0, 0.591732, 31.1554, -0.451874, 1.14351 )
+
+[node name="CandyWrapper071" parent="DYN_OBJ/Floor" instance=ExtResource( 35 )]
+transform = Transform( 0.591732, 0, -0.806135, 0, 1, 0, 0.806135, 0, 0.591732, 30.7495, -0.508884, 1.85965 )
+
+[node name="CandyWrapper072" parent="DYN_OBJ/Floor" instance=ExtResource( 36 )]
+transform = Transform( 0.591732, 0, -0.806135, 0, 1, 0, 0.806135, 0, 0.591732, 32.5647, -0.466889, 5.48974 )
+
+[node name="CandyWrapper073" parent="DYN_OBJ/Floor" instance=ExtResource( 37 )]
+transform = Transform( 0.591732, 0, -0.806135, 0, 1, 0, 0.806135, 0, 0.591732, 31.2523, -0.493982, 2.72233 )
+
+[node name="CandyWrapper074" parent="DYN_OBJ/Floor" instance=ExtResource( 31 )]
+transform = Transform( 0.591732, 0, -0.806135, 0, 1, 0, 0.806135, 0, 0.591732, 32.2031, -0.464261, 3.58138 )
+
+[node name="CandyWrapper075" parent="DYN_OBJ/Floor" instance=ExtResource( 32 )]
+transform = Transform( 0.591732, 0, -0.806135, 0, 1, 0, 0.806135, 0, 0.591732, 32.8189, -0.478188, 3.20282 )
+
+[node name="CandyWrapper076" parent="DYN_OBJ/Floor" instance=ExtResource( 33 )]
+transform = Transform( 0.591732, 0, -0.806135, 0, 1, 0, 0.806135, 0, 0.591732, 32.4243, -0.500088, 4.22716 )
+
+[node name="CandyWrapper077" parent="DYN_OBJ/Floor" instance=ExtResource( 34 )]
+transform = Transform( 0.591732, 0, -0.806135, 0, 1, 0, 0.806135, 0, 0.591732, 33.6437, -0.498152, 4.93994 )
+
+[node name="CandyWrapper078" parent="DYN_OBJ/Floor" instance=ExtResource( 38 )]
+transform = Transform( 0.591732, 0, -0.806135, 0, 1, 0, 0.806135, 0, 0.591732, 33.2814, -0.451875, 3.89877 )
+
+[node name="CandyWrapper079" parent="DYN_OBJ/Floor" instance=ExtResource( 35 )]
+transform = Transform( 0.591732, 0, -0.806135, 0, 1, 0, 0.806135, 0, 0.591732, 32.9999, -0.508884, 4.92542 )
+
+[node name="CandyWrapper081" parent="DYN_OBJ/Floor" instance=ExtResource( 37 )]
+transform = Transform( 0.591732, 0, -0.806135, 0, 1, 0, 0.806135, 0, 0.591732, 34.3609, -0.493982, 5.14155 )
+
+[node name="CandyWrapper082" parent="DYN_OBJ/Floor" instance=ExtResource( 31 )]
+transform = Transform( 0.591732, 0, -0.806135, 0, 1, 0, 0.806135, 0, 0.591732, 34.2715, -0.464261, 6.39932 )
+
+[node name="CandyWrapper083" parent="DYN_OBJ/Floor" instance=ExtResource( 32 )]
+transform = Transform( 0.591732, 0, -0.806135, 0, 1, 0, 0.806135, 0, 0.591732, 34.8874, -0.478188, 6.02075 )
+
+[node name="CandyWrapper084" parent="DYN_OBJ/Floor" instance=ExtResource( 33 )]
+transform = Transform( 0.591732, 0, -0.806135, 0, 1, 0, 0.806135, 0, 0.591732, 34.4928, -0.500088, 7.04509 )
+
+[node name="CandyWrapper085" parent="DYN_OBJ/Floor" instance=ExtResource( 34 )]
+transform = Transform( 0.591732, 0, -0.806135, 0, 1, 0, 0.806135, 0, 0.591732, 35.2827, -0.276849, 7.02338 )
+
+[node name="CandyWrapper086" parent="DYN_OBJ/Floor" instance=ExtResource( 38 )]
+transform = Transform( 0.591732, 0, -0.806135, 0, 1, 0, 0.806135, 0, 0.591732, 33.5334, -0.451874, 5.98823 )
+
+[node name="CandyWrapper087" parent="DYN_OBJ/Floor" instance=ExtResource( 35 )]
+transform = Transform( 0.591732, 0, -0.806135, 0, 1, 0, 0.806135, 0, 0.591732, 35.0684, -0.508884, 7.74336 )
+
+[node name="eraser" parent="DYN_OBJ" instance=ExtResource( 27 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.20581, 4.52869, 9.27863 )
+
+[node name="Pencil001" parent="DYN_OBJ" instance=ExtResource( 25 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.82875, 4.54869, 9.6499 )
+
+[node name="SimpleBridge" parent="DYN_OBJ" instance=ExtResource( 39 )]
+transform = Transform( 0.1, 0, 0, 0, 0.03, 0, 0, 0, 0.1, -7.5329, 4.66694, 16.7541 )
+
+[node name="SimpleBridge3" parent="DYN_OBJ" instance=ExtResource( 39 )]
+transform = Transform( 0.15, 0, 0, 0, 0.0275439, -0.0594424, 0, 0.0118885, 0.137719, -17.9542, 2.46006, 6.02719 )
+
+[node name="SimpleBridge2" parent="DYN_OBJ" instance=ExtResource( 39 )]
+transform = Transform( -0.0508456, 0.00896607, 0.0807558, 5.6547e-09, 0.028135, -0.0347083, -0.0861088, -0.00529429, -0.0476847, -11.8199, 5.70494, 12.7357 )
+
+[node name="TrashCan" parent="DYN_OBJ" instance=ExtResource( 40 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.4465, 0.121558, 26.9101 )
+
+[node name="Whiteboard" parent="DYN_OBJ" instance=ExtResource( 42 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -22.2902, 5.91316, 15.6935 )
+
+[node name="Whiteboard2" parent="DYN_OBJ" instance=ExtResource( 42 )]
+transform = Transform( 1.55766e-07, 0, -1, 0, 0.9, 0, 0.8, 0, 1.94707e-07, 28.1978, 5.91316, 13.9012 )
+
+[node name="TV Stand" parent="DYN_OBJ" instance=ExtResource( 41 )]
+transform = Transform( -0.43196, 0, 0.901893, 0, 1, 0, -0.901893, 0, -0.43196, -19.8195, 0.134996, 28.7654 )
+
+[node name="TV" parent="DYN_OBJ/TV Stand" instance=ExtResource( 43 )]
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 7.10085, 0 )
+
+[node name="Clock" parent="DYN_OBJ" instance=ExtResource( 13 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 28.5505, 10.2892, 26.3267 )
+
+[node name="king" parent="." instance=ExtResource( 24 )]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 153.0
+margin_top = 124.0
+margin_right = 337.0
+margin_bottom = 164.0
+
+[node name="king_text" type="Label" parent="king"]
+margin_left = 138.0
+margin_top = -15.0
+margin_right = 1094.0
+margin_bottom = 204.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.84694, 0.377548, 0.886719, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 2
+text = "color me impressed little green one, that is quite the snowball"
+autowrap = true
+
+[node name="king_text2" type="Label" parent="king"]
+visible = false
+margin_left = 138.0
+margin_top = -15.0
+margin_right = 1094.0
+margin_bottom = 204.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.84694, 0.377548, 0.886719, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 2
+text = "color me impressed little green one, that is quite the snowball"
+autowrap = true
+
+[node name="show_controls" parent="." instance=ExtResource( 5 )]
+
+[node name="Presentation" parent="." instance=ExtResource( 16 )]
+
+[connection signal="tree_exited" from="Presentation" to="." method="_on_Presentation_tree_exited"]
+
+[editable path="king"]

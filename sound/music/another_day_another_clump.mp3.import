@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/another_day_another_clump.mp3-42d41c09e547ce2f96f19b82a985dd78.mp3str"
+
+[deps]
+
+source_file="res://sound/music/another_day_another_clump.mp3"
+dest_files=[ "res://.import/another_day_another_clump.mp3-42d41c09e547ce2f96f19b82a985dd78.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

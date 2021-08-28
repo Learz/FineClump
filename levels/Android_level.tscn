@@ -1,0 +1,1634 @@
+[gd_scene load_steps=50 format=2]
+
+[ext_resource path="res://levels/main_level.gd" type="Script" id=1]
+[ext_resource path="res://player/katamari_physics.tscn" type="PackedScene" id=2]
+[ext_resource path="res://levels/Presentation.tscn" type="PackedScene" id=3]
+[ext_resource path="res://player/cam_loc.tscn" type="PackedScene" id=4]
+[ext_resource path="res://obj/Everything/Geology/GreenHillLarge.003.glb" type="PackedScene" id=5]
+[ext_resource path="res://obj/Everything/Custom/SchoolBag.002.glb" type="PackedScene" id=6]
+[ext_resource path="res://obj/Everything/Custom/Marker.glb" type="PackedScene" id=7]
+[ext_resource path="res://obj/Everything/Custom/Pen.001.glb" type="PackedScene" id=8]
+[ext_resource path="res://obj/Everything/Custom/Pencil.001.glb" type="PackedScene" id=9]
+[ext_resource path="res://obj/Everything/Custom/Smartphone.001.glb" type="PackedScene" id=10]
+[ext_resource path="res://obj/Everything/Geology/GreenHillHuge.001.glb" type="PackedScene" id=11]
+[ext_resource path="res://obj/Everything/Custom/DeskChair.001.glb" type="PackedScene" id=12]
+[ext_resource path="res://obj/Everything/Custom/Whiteboard.glb" type="PackedScene" id=13]
+[ext_resource path="res://obj/Everything/Custom/TV Stand.glb" type="PackedScene" id=14]
+[ext_resource path="res://obj/Everything/Custom/Clock.glb" type="PackedScene" id=15]
+[ext_resource path="res://obj/Everything/Custom/Magnet.005.glb" type="PackedScene" id=16]
+[ext_resource path="res://obj/Everything/Custom/SchoolBag.001.glb" type="PackedScene" id=17]
+[ext_resource path="res://obj/Everything/Custom/TV.glb" type="PackedScene" id=18]
+[ext_resource path="res://obj/Everything/Custom/Magnet.001.glb" type="PackedScene" id=19]
+[ext_resource path="res://obj/Everything/Custom/SchoolBook.003.glb" type="PackedScene" id=20]
+[ext_resource path="res://obj/Everything/Geology/GreenPlateauTiny.003.glb" type="PackedScene" id=21]
+[ext_resource path="res://obj/Everything/Custom/Magnet.002.glb" type="PackedScene" id=22]
+[ext_resource path="res://obj/Everything/Custom/Magnet.003.glb" type="PackedScene" id=23]
+[ext_resource path="res://obj/Everything/Furnishing/CandyWrapper004.glb" type="PackedScene" id=24]
+[ext_resource path="res://obj/Everything/Custom/SchoolBook.002.glb" type="PackedScene" id=25]
+[ext_resource path="res://obj/Everything/Custom/Pen.002.glb" type="PackedScene" id=26]
+[ext_resource path="res://obj/Everything/Custom/eraser.glb" type="PackedScene" id=27]
+[ext_resource path="res://obj/Everything/Custom/SchoolBook.001.glb" type="PackedScene" id=28]
+[ext_resource path="res://obj/Everything/Custom/Magnet.004.glb" type="PackedScene" id=29]
+[ext_resource path="res://obj/Everything/Furnishing/CandyWrapper007.glb" type="PackedScene" id=30]
+[ext_resource path="res://obj/Everything/Furnishing/CandyWrapper008.glb" type="PackedScene" id=31]
+[ext_resource path="res://obj/Everything/Furnishing/CandyWrapper005.glb" type="PackedScene" id=32]
+[ext_resource path="res://obj/Everything/Furnishing/CandyWrapper001.glb" type="PackedScene" id=33]
+[ext_resource path="res://obj/Everything/Furnishing/CandyWrapper003.glb" type="PackedScene" id=34]
+[ext_resource path="res://obj/Everything/Furnishing/CandyWrapper002.glb" type="PackedScene" id=35]
+[ext_resource path="res://obj/Everything/Furnishing/CandyWrapper006.glb" type="PackedScene" id=36]
+[ext_resource path="res://obj/Everything/Custom/Desk.glb" type="PackedScene" id=37]
+[ext_resource path="res://obj/Everything/Custom/TeacherDesk.glb" type="PackedScene" id=38]
+[ext_resource path="res://obj/Everything/Custom/Pencil.002.glb" type="PackedScene" id=39]
+[ext_resource path="res://obj/Everything/Custom/DeskChair.003.glb" type="PackedScene" id=40]
+[ext_resource path="res://obj/Everything/Custom/DeskChair.002.glb" type="PackedScene" id=41]
+[ext_resource path="res://obj/Everything/Custom/Umbrella.002.glb" type="PackedScene" id=42]
+[ext_resource path="res://obj/Everything/Custom/TrashBin.002.glb" type="PackedScene" id=43]
+[ext_resource path="res://obj/Everything/Custom/Umbrella.001.glb" type="PackedScene" id=44]
+[ext_resource path="res://obj/Everything/Custom/Smartphone.002.glb" type="PackedScene" id=45]
+[ext_resource path="res://sound/music/another_day_another_clump.mp3" type="AudioStream" id=46]
+[ext_resource path="res://obj/Everything/Custom/Wall.glb" type="PackedScene" id=47]
+[ext_resource path="res://obj/Everything/Custom/WallWindow.glb" type="PackedScene" id=48]
+[ext_resource path="res://obj/Everything/Custom/WallUpper.glb" type="PackedScene" id=49]
+
+[node name="Level" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="bg_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 46 )
+
+[node name="cam_loc" parent="." instance=ExtResource( 4 )]
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -15.1877, 7.97965, 16.736 )
+
+[node name="katamari_physics" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 8, 16.5 )
+
+[node name="Presentation" parent="." instance=ExtResource( 3 )]
+
+[node name="DYN_OBJ" type="Spatial" parent="."]
+
+[node name="BeegWorld" type="Spatial" parent="DYN_OBJ"]
+transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0 )
+
+[node name="GreenHillLarge004" parent="DYN_OBJ/BeegWorld" instance=ExtResource( 5 )]
+transform = Transform( 2.99435, 0, 0.183982, 0, 3, 0, -0.183982, 0, 2.99435, -85.6619, -17.2223, -25.2552 )
+
+[node name="GreenHillHuge001" parent="DYN_OBJ/BeegWorld" instance=ExtResource( 11 )]
+transform = Transform( 3.84471, 0, 3.19659, 0, 5, 0, -3.19659, 0, 3.84471, -49.2591, -24.7293, -86.5909 )
+
+[node name="GreenHillLarge003" parent="DYN_OBJ/BeegWorld" instance=ExtResource( 5 )]
+transform = Transform( -0.349249, 0, -3.98472, 0, 4, 0, 3.98472, 0, -0.349249, 52.4185, -6.71338, -105.627 )
+
+[node name="GreenPlateauTiny003" parent="DYN_OBJ/BeegWorld" instance=ExtResource( 21 )]
+transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 5, -1.96818, -6.21703, -19.5249 )
+
+[node name="Desks" type="Spatial" parent="DYN_OBJ"]
+transform = Transform( 1, 0, 8.74231e-08, 2.84217e-14, 1, -8.74228e-08, -8.74231e-08, 8.74228e-08, 1, -7.15256e-07, 2.86102e-06, 0 )
+
+[node name="Marker" parent="DYN_OBJ/Desks" instance=ExtResource( 7 )]
+transform = Transform( 0.202667, 0, 0.979248, 0, 1, 0, -0.979248, 0, 0.202667, -16.3161, 5.24305, 13.2475 )
+
+[node name="Marker2" parent="DYN_OBJ/Desks" instance=ExtResource( 7 )]
+transform = Transform( 0.44232, 0, 0.896858, 0, 1, 0, -0.896858, 0, 0.44232, -16.6093, 5.24305, 13.1114 )
+
+[node name="Marker3" parent="DYN_OBJ/Desks" instance=ExtResource( 7 )]
+transform = Transform( -0.652562, 0, -0.757736, 0, 1, -2.84217e-14, 0.757736, 0, -0.652562, -17.0298, 6.90378, 15.0476 )
+
+[node name="Marker4" parent="DYN_OBJ/Desks" instance=ExtResource( 7 )]
+transform = Transform( -0.784419, 0, -0.620231, 2.13163e-14, 1, 4.26326e-14, 0.620231, 0, -0.784419, -16.9055, 6.90378, 15.3647 )
+
+[node name="Marker5" parent="DYN_OBJ/Desks" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, -8.47033e-22, 1, 0, 0, 0, 1, -13.2224, 5.14895, -2.55093 )
+
+[node name="Marker10" parent="DYN_OBJ/Desks" instance=ExtResource( 7 )]
+transform = Transform( 0.707107, 6.18173e-08, 0.707107, -6.18173e-08, 1, -2.56056e-08, -0.707107, -2.56055e-08, 0.707107, -14.2, 5.14895, -2.18228 )
+
+[node name="Marker11" parent="DYN_OBJ/Desks" instance=ExtResource( 7 )]
+transform = Transform( -3.17861e-08, 8.74228e-08, 1, -8.74228e-08, 1, -8.74229e-08, -1, -8.74228e-08, -3.17861e-08, -14.6247, 5.14895, -1.28035 )
+
+[node name="Marker12" parent="DYN_OBJ/Desks" instance=ExtResource( 7 )]
+transform = Transform( -0.707107, 6.18173e-08, 0.707107, -6.18172e-08, 1, -1.4924e-07, -0.707107, -1.4924e-07, -0.707107, -14.2504, 5.14895, -0.26142 )
+
+[node name="Marker6" parent="DYN_OBJ/Desks" instance=ExtResource( 7 )]
+transform = Transform( -1, 6.40376e-15, -7.64897e-08, 6.35303e-14, 1, -1.74846e-07, 7.64897e-08, -1.74846e-07, -1, -13.3148, 5.14895, 0.135256 )
+
+[node name="Marker7" parent="DYN_OBJ/Desks" instance=ExtResource( 7 )]
+transform = Transform( -0.707107, -6.18172e-08, -0.707107, 6.18173e-08, 1, -1.4924e-07, 0.707107, -1.4924e-07, -0.707107, -12.3893, 5.14895, -0.229722 )
+
+[node name="Marker8" parent="DYN_OBJ/Desks" instance=ExtResource( 7 )]
+transform = Transform( 6.15885e-08, -8.74228e-08, -1, 8.74228e-08, 1, -8.74227e-08, 1, -8.74228e-08, 6.15885e-08, -11.9413, 5.14895, -1.1576 )
+
+[node name="Marker9" parent="DYN_OBJ/Desks" instance=ExtResource( 7 )]
+transform = Transform( 0.707107, -6.18172e-08, -0.707107, 6.18172e-08, 1, -2.56055e-08, 0.707107, -2.56056e-08, 0.707107, -12.2967, 5.14895, -2.15314 )
+
+[node name="Magnet001" parent="DYN_OBJ/Desks" instance=ExtResource( 19 )]
+transform = Transform( 0.470812, 0, -0.882234, 0, 1, 0, 0.882234, 0, 0.470812, -16.4999, 6.88344, 18.9731 )
+
+[node name="Magnet002" parent="DYN_OBJ/Desks" instance=ExtResource( 19 )]
+transform = Transform( 0.470812, 0, -0.882234, 0, 1, 0, 0.882234, 0, 0.470812, -17.236, 6.88344, 17.8237 )
+
+[node name="Magnet003" parent="DYN_OBJ/Desks" instance=ExtResource( 22 )]
+transform = Transform( 0.470812, 0, -0.882234, 0, 1, 0, 0.882234, 0, 0.470812, -16.8662, 6.88344, 18.7282 )
+
+[node name="Magnet004" parent="DYN_OBJ/Desks" instance=ExtResource( 23 )]
+transform = Transform( 0.470812, 0, -0.882234, 0, 1, 0, 0.882234, 0, 0.470812, -16.6502, 6.88344, 18.0869 )
+
+[node name="Magnet005" parent="DYN_OBJ/Desks" instance=ExtResource( 29 )]
+transform = Transform( 0.470812, 0, -0.882234, 0, 1, 0, 0.882234, 0, 0.470812, -15.9943, 6.88344, 18.8981 )
+
+[node name="Magnet006" parent="DYN_OBJ/Desks" instance=ExtResource( 16 )]
+transform = Transform( 0.470812, 0, -0.882234, 0, 1, 0, 0.882234, 0, 0.470812, -16.3692, 6.88344, 18.567 )
+
+[node name="Magnet007" parent="DYN_OBJ/Desks" instance=ExtResource( 19 )]
+transform = Transform( 0.470812, 0, -0.882234, 1.42109e-14, 1, 0, 0.882234, 0, 0.470812, -16.7187, 6.88344, 17.6109 )
+
+[node name="Magnet008" parent="DYN_OBJ/Desks" instance=ExtResource( 16 )]
+transform = Transform( 0.470812, 0, -0.882234, 0, 1, 0, 0.882234, 0, 0.470812, -17.196, 6.88344, 18.3438 )
+
+[node name="Magnet009" parent="DYN_OBJ/Desks" instance=ExtResource( 19 )]
+transform = Transform( -0.571788, 0, 0.820402, 0, 1, 0, -0.820402, 0, -0.571788, -16.5876, 6.88344, 16.5903 )
+
+[node name="Magnet010" parent="DYN_OBJ/Desks" instance=ExtResource( 19 )]
+transform = Transform( -0.571788, 0, 0.820402, 0, 1, 0, -0.820402, 0, -0.571788, -15.7207, 6.88344, 17.6445 )
+
+[node name="Magnet011" parent="DYN_OBJ/Desks" instance=ExtResource( 22 )]
+transform = Transform( -0.571788, 0, 0.820402, 0, 1, 0, -0.820402, 0, -0.571788, -16.1948, 6.88344, 16.7901 )
+
+[node name="Magnet012" parent="DYN_OBJ/Desks" instance=ExtResource( 23 )]
+transform = Transform( -0.571788, 0, 0.820402, 0, 1, 0, -0.820402, 0, -0.571788, -16.3335, 6.88344, 17.4524 )
+
+[node name="Magnet013" parent="DYN_OBJ/Desks" instance=ExtResource( 29 )]
+transform = Transform( -0.571788, 0, 0.820402, 0, 1, 0, -0.820402, 0, -0.571788, -17.0807, 6.88344, 16.7245 )
+
+[node name="Magnet014" parent="DYN_OBJ/Desks" instance=ExtResource( 16 )]
+transform = Transform( -0.571788, 0, 0.820402, 0, 1, 0, -0.820402, 0, -0.571788, -16.6693, 6.88344, 17.009 )
+
+[node name="Magnet017" parent="DYN_OBJ/Desks" instance=ExtResource( 16 )]
+transform = Transform( -0.571788, 0, 0.820402, 0, 1, 0, -0.820402, 0, -0.571788, -15.7301, 6.88344, 18.3044 )
+
+[node name="Magnet015" parent="DYN_OBJ/Desks" instance=ExtResource( 19 )]
+transform = Transform( -0.571788, 0, 0.820402, 0, 1, 0, -0.820402, 0, -0.571788, -16.2093, 6.88344, 17.917 )
+
+[node name="Magnet016" parent="DYN_OBJ/Desks" instance=ExtResource( 16 )]
+transform = Transform( -0.571788, 0, 0.820402, 0, 1, 0, -0.820402, 0, -0.571788, -15.8219, 6.88344, 17.1328 )
+
+[node name="Pen001" parent="DYN_OBJ/Desks" instance=ExtResource( 8 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -13.6445, 6.88797, 15.224 )
+
+[node name="Pen003" parent="DYN_OBJ/Desks" instance=ExtResource( 8 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -13.457, 6.88797, 15.224 )
+
+[node name="Pen004" parent="DYN_OBJ/Desks" instance=ExtResource( 8 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -13.274, 6.88797, 15.224 )
+
+[node name="Pen002" parent="DYN_OBJ/Desks" instance=ExtResource( 26 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -13.8643, 6.88797, 15.2262 )
+
+[node name="eraser" parent="DYN_OBJ/Desks" instance=ExtResource( 27 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -13.9231, 5.12841, 10.1596 )
+
+[node name="eraser2" parent="DYN_OBJ/Desks" instance=ExtResource( 27 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -13.9231, 5.12841, 10.5288 )
+
+[node name="eraser3" parent="DYN_OBJ/Desks" instance=ExtResource( 27 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -13.9231, 5.12841, 10.9004 )
+
+[node name="eraser4" parent="DYN_OBJ/Desks" instance=ExtResource( 27 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -15.9831, 6.88933, 14.5644 )
+
+[node name="eraser5" parent="DYN_OBJ/Desks" instance=ExtResource( 27 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -15.9831, 6.88933, 14.9988 )
+
+[node name="eraser6" parent="DYN_OBJ/Desks" instance=ExtResource( 27 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -15.9831, 6.88933, 15.3888 )
+
+[node name="eraser14" parent="DYN_OBJ/Desks" instance=ExtResource( 27 )]
+transform = Transform( -1, 0, -8.74228e-08, 1.69407e-21, 1, 0, 8.74228e-08, 0, -1, -15.9831, 5.15941, 21.6985 )
+
+[node name="eraser15" parent="DYN_OBJ/Desks" instance=ExtResource( 27 )]
+transform = Transform( -1, 0, -8.74228e-08, 1.69407e-21, 1, 0, 8.74228e-08, 0, -1, -15.9866, 5.15509, 21.4315 )
+
+[node name="eraser16" parent="DYN_OBJ/Desks" instance=ExtResource( 27 )]
+transform = Transform( -1, 0, -8.74228e-08, 1.69407e-21, 1, 0, 8.74228e-08, 0, -1, -15.9866, 5.15509, 21.1655 )
+
+[node name="eraser17" parent="DYN_OBJ/Desks" instance=ExtResource( 27 )]
+transform = Transform( -1, 0, -8.74228e-08, 1.69407e-21, 1, 0, 8.74228e-08, 0, -1, -15.9831, 5.15941, 20.8706 )
+
+[node name="eraser18" parent="DYN_OBJ/Desks" instance=ExtResource( 27 )]
+transform = Transform( -1, 0, -8.74228e-08, 1.69407e-21, 1, 0, 8.74228e-08, 0, -1, -15.9866, 5.25267, 21.5643 )
+
+[node name="eraser19" parent="DYN_OBJ/Desks" instance=ExtResource( 27 )]
+transform = Transform( -1, 0, -8.74228e-08, 1.69407e-21, 1, 0, 8.74228e-08, 0, -1, -15.9866, 5.2556, 21.2984 )
+
+[node name="eraser20" parent="DYN_OBJ/Desks" instance=ExtResource( 27 )]
+transform = Transform( -1, 0, -8.74228e-08, 1.69407e-21, 1, 0, 8.74228e-08, 0, -1, -15.9831, 5.25699, 21.0034 )
+
+[node name="eraser21" parent="DYN_OBJ/Desks" instance=ExtResource( 27 )]
+transform = Transform( -1, 0, -8.74228e-08, 1.69407e-21, 1, 0, 8.74228e-08, 0, -1, -15.9866, 5.35091, 21.4364 )
+
+[node name="eraser22" parent="DYN_OBJ/Desks" instance=ExtResource( 27 )]
+transform = Transform( -1, 0, -8.74228e-08, 1.69407e-21, 1, 0, 8.74228e-08, 0, -1, -15.9831, 5.35523, 21.1414 )
+
+[node name="eraser23" parent="DYN_OBJ/Desks" instance=ExtResource( 27 )]
+transform = Transform( -1, 0, -8.74228e-08, 1.69407e-21, 1, 0, 8.74228e-08, 0, -1, -15.9831, 5.45506, 21.287 )
+
+[node name="eraser24" parent="DYN_OBJ/Desks" instance=ExtResource( 27 )]
+transform = Transform( -0.713593, 6.1245e-08, -0.700561, 6.1245e-08, 1, 2.50385e-08, 0.700561, -2.50385e-08, -0.713593, -15.6936, 5.15941, 23.6218 )
+
+[node name="eraser25" parent="DYN_OBJ/Desks" instance=ExtResource( 27 )]
+transform = Transform( -0.713593, 6.1245e-08, -0.700561, 6.1245e-08, 1, 2.50385e-08, 0.700561, -2.50385e-08, -0.713593, -15.8832, 5.15509, 23.4337 )
+
+[node name="eraser26" parent="DYN_OBJ/Desks" instance=ExtResource( 27 )]
+transform = Transform( -0.713593, 6.1245e-08, -0.700561, 6.1245e-08, 1, 2.50385e-08, 0.700561, -2.50385e-08, -0.713593, -16.0695, 5.15509, 23.2439 )
+
+[node name="eraser27" parent="DYN_OBJ/Desks" instance=ExtResource( 27 )]
+transform = Transform( -0.713593, 6.1245e-08, -0.700561, 6.1245e-08, 1, 2.50385e-08, 0.700561, -2.50385e-08, -0.713593, -16.2736, 5.15941, 23.031 )
+
+[node name="eraser28" parent="DYN_OBJ/Desks" instance=ExtResource( 27 )]
+transform = Transform( -0.713593, 6.1245e-08, -0.700561, 6.1245e-08, 1, 2.50385e-08, 0.700561, -2.50385e-08, -0.713593, -15.7901, 5.25267, 23.5285 )
+
+[node name="eraser29" parent="DYN_OBJ/Desks" instance=ExtResource( 27 )]
+transform = Transform( -0.713593, 6.1245e-08, -0.700561, 6.1245e-08, 1, 2.50385e-08, 0.700561, -2.50385e-08, -0.713593, -15.9764, 5.2556, 23.3387 )
+
+[node name="eraser30" parent="DYN_OBJ/Desks" instance=ExtResource( 27 )]
+transform = Transform( -0.713593, 6.1245e-08, -0.700561, 6.1245e-08, 1, 2.50385e-08, 0.700561, -2.50385e-08, -0.713593, -16.1806, 5.25699, 23.1257 )
+
+[node name="eraser31" parent="DYN_OBJ/Desks" instance=ExtResource( 27 )]
+transform = Transform( -0.713593, 6.1245e-08, -0.700561, 6.1245e-08, 1, 2.50385e-08, 0.700561, -2.50385e-08, -0.713593, -15.8797, 5.35091, 23.4372 )
+
+[node name="eraser32" parent="DYN_OBJ/Desks" instance=ExtResource( 27 )]
+transform = Transform( -0.713593, 6.1245e-08, -0.700561, 6.1245e-08, 1, 2.50385e-08, 0.700561, -2.50385e-08, -0.713593, -16.0839, 5.35523, 23.2242 )
+
+[node name="eraser33" parent="DYN_OBJ/Desks" instance=ExtResource( 27 )]
+transform = Transform( -0.713593, 6.1245e-08, -0.700561, 6.1245e-08, 1, 2.50385e-08, 0.700561, -2.50385e-08, -0.713593, -15.9819, 5.45506, 23.3281 )
+
+[node name="eraser7" parent="DYN_OBJ/Desks" instance=ExtResource( 27 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -13.0573, 5.12841, 10.1596 )
+
+[node name="eraser8" parent="DYN_OBJ/Desks" instance=ExtResource( 27 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -13.0573, 5.12841, 10.5288 )
+
+[node name="eraser9" parent="DYN_OBJ/Desks" instance=ExtResource( 27 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -13.0573, 5.12841, 10.9004 )
+
+[node name="eraser10" parent="DYN_OBJ/Desks" instance=ExtResource( 27 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -15.1173, 6.88933, 14.5644 )
+
+[node name="eraser11" parent="DYN_OBJ/Desks" instance=ExtResource( 27 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -15.1173, 6.88933, 14.9988 )
+
+[node name="eraser12" parent="DYN_OBJ/Desks" instance=ExtResource( 27 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -15.1173, 6.88933, 15.3888 )
+
+[node name="Desk" parent="DYN_OBJ/Desks" instance=ExtResource( 37 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.65546, 0.341359, 34.4605 )
+
+[node name="Desk3" parent="DYN_OBJ/Desks" instance=ExtResource( 37 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.6555, 0.341359, 34.4605 )
+
+[node name="Desk2" parent="DYN_OBJ/Desks" instance=ExtResource( 37 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.34454, 0.341359, 34.4605 )
+
+[node name="Desk4" parent="DYN_OBJ/Desks" instance=ExtResource( 37 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.34454, 0.341359, 21.9697 )
+
+[node name="SchoolBook007" parent="DYN_OBJ/Desks" instance=ExtResource( 20 )]
+transform = Transform( -0.816903, 0.576775, -2.52116e-08, 3.55271e-15, -4.37114e-08, -1, -0.576775, -0.816903, 3.5708e-08, -8.61761, 6.31369, 23.7718 )
+
+[node name="SchoolBook008" parent="DYN_OBJ/Desks" instance=ExtResource( 20 )]
+transform = Transform( 0.600769, 0.799423, -3.49439e-08, 7.10543e-15, -4.37114e-08, -1, -0.799423, 0.600769, -2.62605e-08, -8.70069, 6.31369, 20.6389 )
+
+[node name="SchoolBook009" parent="DYN_OBJ/Desks" instance=ExtResource( 25 )]
+transform = Transform( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 0, -9.17698, 6.32059, 22.2843 )
+
+[node name="Pen005" parent="DYN_OBJ/Desks" instance=ExtResource( 8 )]
+transform = Transform( -4.37114e-08, -7.10543e-15, 1, -0.89651, 0.443024, -3.91877e-08, -0.443024, -0.89651, -1.93652e-08, -6.66889, 5.79473, 22.145 )
+
+[node name="Pen006" parent="DYN_OBJ/Desks" instance=ExtResource( 26 )]
+transform = Transform( 0.531257, 0.691797, -0.489063, -0.79312, 0.609066, -2.48187e-08, 0.297872, 0.387885, 0.872249, -6.51044, 5.7135, 22.5158 )
+
+[node name="Pencil001" parent="DYN_OBJ/Desks" instance=ExtResource( 9 )]
+transform = Transform( -0.44498, -0.710764, -0.5448, -0.847595, 0.530644, -2.2761e-08, 0.289095, 0.46177, -0.838566, -6.97935, 5.76609, 22.6089 )
+
+[node name="Pen007" parent="DYN_OBJ/Desks" instance=ExtResource( 8 )]
+transform = Transform( 0.203646, 0.412101, -0.888088, -0.89651, 0.443024, -3.91877e-08, 0.393445, 0.79618, 0.459673, -6.70578, 5.79473, 22.6179 )
+
+[node name="Pen008" parent="DYN_OBJ/Desks" instance=ExtResource( 26 )]
+transform = Transform( -0.479505, -0.876919, 0.032985, -0.877303, 0.479909, 0.00513403, -0.0203319, -0.026476, -0.999443, -7.00176, 5.76023, 22.3496 )
+
+[node name="Pencil002" parent="DYN_OBJ/Desks" instance=ExtResource( 9 )]
+transform = Transform( 0.464761, 0.742361, 0.482595, -0.847595, 0.530644, -2.2761e-08, -0.256086, -0.409045, 0.875844, -6.44934, 5.76609, 22.2704 )
+
+[node name="eraser13" parent="DYN_OBJ/Desks" instance=ExtResource( 27 )]
+transform = Transform( -0.0744042, 0, -0.997228, 0, 1, 4.44089e-16, 0.997228, 0, -0.0744042, -6.71966, 5.26692, 22.4648 )
+
+[node name="SchoolBook001" parent="DYN_OBJ/Desks" instance=ExtResource( 28 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, -8.47033e-22, -1, 0, -4.37114e-08, -6.83235, 5.13486, 22.4457 )
+
+[node name="Desk5" parent="DYN_OBJ/Desks" instance=ExtResource( 37 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.65546, 0.341359, 21.9697 )
+
+[node name="Desk6" parent="DYN_OBJ/Desks" instance=ExtResource( 37 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10.3445, 0.341359, 21.9697 )
+
+[node name="Desk7" parent="DYN_OBJ/Desks" instance=ExtResource( 37 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 8.47033e-22, -1, 0, -4.37114e-08, 1.34454, 0.341359, 10.5352 )
+
+[node name="Smartphone001" parent="DYN_OBJ/Desks/Desk7" instance=ExtResource( 10 )]
+transform = Transform( 0.953859, 4.03382e-09, -0.300256, 4.03377e-09, 1, 2.62492e-08, 0.300256, -2.62492e-08, 0.953859, -1.27826, 4.9915, 1.63979 )
+
+[node name="Smartphone006" parent="DYN_OBJ/Desks/Desk7" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 8.47033e-22, 0, 0, 1, -1.36495, 4.9915, -0.568006 )
+
+[node name="Smartphone013" parent="DYN_OBJ/Desks/Desk7" instance=ExtResource( 10 )]
+transform = Transform( -4.37114e-08, 8.74228e-08, 1, 8.74226e-08, 1, -8.74227e-08, -1, 8.74228e-08, -4.37114e-08, -0.454988, 5.75968, 0.438413 )
+
+[node name="Smartphone017" parent="DYN_OBJ/Desks/Desk7" instance=ExtResource( 10 )]
+transform = Transform( -4.37114e-08, 8.74228e-08, 1, 8.74226e-08, 1, -8.74227e-08, -1, 8.74228e-08, -4.37114e-08, 0.53531, 5.75968, 0.438413 )
+
+[node name="Smartphone005" parent="DYN_OBJ/Desks/Desk7" instance=ExtResource( 10 )]
+transform = Transform( 0.884955, 1.00576e-08, -0.465676, 1.00575e-08, 1, 4.07107e-08, 0.465676, -4.07107e-08, 0.884955, 1.75947, 4.9915, -1.0483 )
+
+[node name="Smartphone002" parent="DYN_OBJ/Desks/Desk7" instance=ExtResource( 45 )]
+transform = Transform( 0.976803, 2.02792e-09, 0.214139, 2.02793e-09, 1, -1.87206e-08, -0.214139, 1.87206e-08, 0.976803, -0.0629425, 4.9915, 1.63162 )
+
+[node name="Smartphone007" parent="DYN_OBJ/Desks/Desk7" instance=ExtResource( 45 )]
+transform = Transform( -1.62921e-07, 0.906308, 0.422618, -5.0822e-21, 0.422618, -0.906308, -1, -1.47656e-07, -6.88532e-08, -0.61252, 5.28454, 0.442424 )
+
+[node name="Smartphone008" parent="DYN_OBJ/Desks/Desk7" instance=ExtResource( 45 )]
+transform = Transform( -1.62921e-07, -0.906308, -0.422618, -4.87044e-21, 0.422618, -0.906308, 1, -1.47656e-07, -6.88532e-08, -1.08204, 5.28454, 0.442425 )
+
+[node name="Smartphone009" parent="DYN_OBJ/Desks/Desk7" instance=ExtResource( 45 )]
+transform = Transform( -1.62921e-07, 0.906308, 0.422618, -5.0822e-21, 0.422618, -0.906308, -1, -1.47656e-07, -6.88532e-08, 0.313613, 5.28454, 0.442424 )
+
+[node name="Smartphone010" parent="DYN_OBJ/Desks/Desk7" instance=ExtResource( 45 )]
+transform = Transform( -1.62921e-07, -0.906308, -0.422618, -4.87044e-21, 0.422618, -0.906308, 1, -1.47656e-07, -6.88532e-08, -0.155903, 5.28454, 0.442424 )
+
+[node name="Smartphone018" parent="DYN_OBJ/Desks/Desk7" instance=ExtResource( 10 )]
+transform = Transform( -4.37114e-08, 8.74228e-08, 1, 8.74225e-08, 1, -8.74227e-08, -1, 8.74228e-08, -4.37114e-08, -0.0107021, 6.6765, 0.438413 )
+
+[node name="Smartphone019" parent="DYN_OBJ/Desks/Desk7" instance=ExtResource( 45 )]
+transform = Transform( -1.62921e-07, 0.906308, 0.422618, -5.0822e-21, 0.422618, -0.906308, -1, -1.47656e-07, -6.88532e-08, -0.168224, 6.20135, 0.442425 )
+
+[node name="Smartphone020" parent="DYN_OBJ/Desks/Desk7" instance=ExtResource( 45 )]
+transform = Transform( -1.62921e-07, -0.906308, -0.422618, -4.87044e-21, 0.422618, -0.906308, 1, -1.47656e-07, -6.88532e-08, -0.637747, 6.20135, 0.442425 )
+
+[node name="Smartphone021" parent="DYN_OBJ/Desks/Desk7" instance=ExtResource( 45 )]
+transform = Transform( -1.62921e-07, 0.906308, 0.422618, -5.0822e-21, 0.422618, -0.906308, -1, -1.47656e-07, -6.88532e-08, 0.757908, 6.20135, 0.442424 )
+
+[node name="Smartphone022" parent="DYN_OBJ/Desks/Desk7" instance=ExtResource( 45 )]
+transform = Transform( -1.62921e-07, -0.906308, -0.422618, -4.87044e-21, 0.422618, -0.906308, 1, -1.47657e-07, -6.88532e-08, 0.288387, 6.20135, 0.442425 )
+
+[node name="Smartphone023" parent="DYN_OBJ/Desks/Desk7" instance=ExtResource( 45 )]
+transform = Transform( -1.62921e-07, 0.906308, 0.422618, -5.0822e-21, 0.422618, -0.906308, -1, -1.47656e-07, -6.88532e-08, 0.261167, 7.14857, 0.442424 )
+
+[node name="Smartphone024" parent="DYN_OBJ/Desks/Desk7" instance=ExtResource( 45 )]
+transform = Transform( -1.62921e-07, -0.906308, -0.422618, -4.87044e-21, 0.422618, -0.906308, 1, -1.47657e-07, -6.88532e-08, -0.208347, 7.14857, 0.442425 )
+
+[node name="Smartphone011" parent="DYN_OBJ/Desks/Desk7" instance=ExtResource( 45 )]
+transform = Transform( -1.62921e-07, 0.906308, 0.422618, -5.0822e-21, 0.422618, -0.906308, -1, -1.47656e-07, -6.88532e-08, 1.25544, 5.28454, 0.442424 )
+
+[node name="Smartphone012" parent="DYN_OBJ/Desks/Desk7" instance=ExtResource( 45 )]
+transform = Transform( -1.62921e-07, -0.906308, -0.422618, -1.48231e-21, 0.422618, -0.906308, 1, -1.47656e-07, -6.88532e-08, 0.785929, 5.28454, 0.442425 )
+
+[node name="Smartphone004" parent="DYN_OBJ/Desks/Desk7" instance=ExtResource( 45 )]
+transform = Transform( 0.764652, 2.05748e-08, -0.644444, 2.05748e-08, 1, 5.63391e-08, 0.644444, -5.63391e-08, 0.764652, 1.32518, 4.9915, 1.4148 )
+
+[node name="Smartphone003" parent="DYN_OBJ/Desks/Desk7" instance=ExtResource( 45 )]
+transform = Transform( 0.733789, 2.32729e-08, 0.679377, 2.32729e-08, 1, -5.93931e-08, -0.679377, 5.9393e-08, 0.733789, -0.0612879, 4.9915, -1.32204 )
+
+[node name="Smartphone014" parent="DYN_OBJ/Desks" instance=ExtResource( 10 )]
+transform = Transform( -1, 8.74228e-08, -8.74228e-08, 8.74225e-08, 1, -8.74227e-08, 8.74228e-08, -8.74228e-08, -1, 5.87234, 1.08788, 5.21477 )
+
+[node name="Smartphone025" parent="DYN_OBJ/Desks" instance=ExtResource( 10 )]
+transform = Transform( -1, 8.74228e-08, -8.74228e-08, 8.74225e-08, 1, -8.74227e-08, 8.74228e-08, -8.74228e-08, -1, 5.87234, 1.08788, 4.22447 )
+
+[node name="Smartphone015" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 5.87635, 0.612743, 5.3723 )
+
+[node name="Smartphone016" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.0804e-07, -5.038e-08, -2.0117e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 5.87635, 0.612743, 5.84182 )
+
+[node name="Smartphone026" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 5.87635, 0.612743, 4.44617 )
+
+[node name="Smartphone027" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.0804e-07, -5.038e-08, -2.0117e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 5.87635, 0.612743, 4.91569 )
+
+[node name="Smartphone028" parent="DYN_OBJ/Desks" instance=ExtResource( 10 )]
+transform = Transform( -1, 8.74228e-08, -8.74228e-08, 8.74224e-08, 1, -8.74227e-08, 8.74228e-08, -8.74228e-08, -1, 5.87234, 2.0047, 4.77048 )
+
+[node name="Smartphone029" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 5.87635, 1.52955, 4.928 )
+
+[node name="Smartphone030" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.0804e-07, -5.038e-08, -2.0117e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 5.87635, 1.52955, 5.39753 )
+
+[node name="Smartphone031" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 5.87635, 1.52955, 4.00187 )
+
+[node name="Smartphone032" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.08041e-07, -5.038e-08, -2.0117e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 5.87635, 1.52955, 4.47139 )
+
+[node name="Smartphone033" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 5.87635, 2.47677, 4.49861 )
+
+[node name="Smartphone034" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.08041e-07, -5.038e-08, -2.0117e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 5.87635, 2.47677, 4.96813 )
+
+[node name="Smartphone035" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 5.87635, 0.612742, 3.50434 )
+
+[node name="Smartphone036" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.0804e-07, -5.038e-08, -1.67289e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 5.87635, 0.612743, 3.97385 )
+
+[node name="Smartphone037" parent="DYN_OBJ/Desks" instance=ExtResource( 10 )]
+transform = Transform( -1, 8.74228e-08, -8.74228e-08, 8.74225e-08, 1, -8.74227e-08, 8.74228e-08, -8.74228e-08, -1, 6.97983, 1.08788, 5.21477 )
+
+[node name="Smartphone038" parent="DYN_OBJ/Desks" instance=ExtResource( 10 )]
+transform = Transform( -1, 8.74228e-08, -8.74228e-08, 8.74225e-08, 1, -8.74227e-08, 8.74228e-08, -8.74228e-08, -1, 6.97983, 1.08788, 4.22447 )
+
+[node name="Smartphone039" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 6.98385, 0.612743, 5.3723 )
+
+[node name="Smartphone040" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.0804e-07, -5.038e-08, -2.35052e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 6.98384, 0.612743, 5.84182 )
+
+[node name="Smartphone041" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 6.98384, 0.612743, 4.44617 )
+
+[node name="Smartphone042" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.0804e-07, -5.038e-08, -2.35052e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 6.98384, 0.612743, 4.91569 )
+
+[node name="Smartphone043" parent="DYN_OBJ/Desks" instance=ExtResource( 10 )]
+transform = Transform( -1, 8.74228e-08, -8.74228e-08, 8.74224e-08, 1, -8.74227e-08, 8.74228e-08, -8.74228e-08, -1, 6.97983, 2.0047, 4.77048 )
+
+[node name="Smartphone044" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 6.98384, 1.52955, 4.928 )
+
+[node name="Smartphone045" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.0804e-07, -5.038e-08, -2.35052e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 6.98385, 1.52955, 5.39753 )
+
+[node name="Smartphone046" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 6.98384, 1.52955, 4.00187 )
+
+[node name="Smartphone047" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.08041e-07, -5.038e-08, -2.35052e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 6.98385, 1.52955, 4.47139 )
+
+[node name="Smartphone048" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 6.98385, 2.47677, 4.49861 )
+
+[node name="Smartphone049" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.08041e-07, -5.038e-08, -2.35052e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 6.98384, 2.47677, 4.96813 )
+
+[node name="Smartphone050" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 6.98384, 0.612742, 3.50434 )
+
+[node name="Smartphone051" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.0804e-07, -5.038e-08, -2.0117e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 6.98384, 0.612743, 3.97385 )
+
+[node name="Smartphone052" parent="DYN_OBJ/Desks" instance=ExtResource( 10 )]
+transform = Transform( -1, 8.74228e-08, -8.74228e-08, 8.74225e-08, 1, -8.74227e-08, 8.74228e-08, -8.74228e-08, -1, 8.2504, 1.08788, 5.21477 )
+
+[node name="Smartphone053" parent="DYN_OBJ/Desks" instance=ExtResource( 10 )]
+transform = Transform( -1, 8.74228e-08, -8.74228e-08, 8.74225e-08, 1, -8.74227e-08, 8.74228e-08, -8.74228e-08, -1, 8.2504, 1.08788, 4.22447 )
+
+[node name="Smartphone054" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 8.25442, 0.612743, 5.3723 )
+
+[node name="Smartphone055" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.0804e-07, -5.038e-08, -2.68933e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 8.25442, 0.612743, 5.84182 )
+
+[node name="Smartphone056" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 8.25441, 0.612743, 4.44617 )
+
+[node name="Smartphone057" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.0804e-07, -5.038e-08, -2.68933e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 8.25441, 0.612743, 4.91569 )
+
+[node name="Smartphone058" parent="DYN_OBJ/Desks" instance=ExtResource( 10 )]
+transform = Transform( -1, 8.74228e-08, -8.74228e-08, 8.74224e-08, 1, -8.74227e-08, 8.74228e-08, -8.74228e-08, -1, 8.25041, 2.0047, 4.77048 )
+
+[node name="Smartphone059" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 8.25442, 1.52955, 4.928 )
+
+[node name="Smartphone060" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.0804e-07, -5.038e-08, -2.68933e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 8.25442, 1.52955, 5.39753 )
+
+[node name="Smartphone061" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 8.25441, 1.52955, 4.00187 )
+
+[node name="Smartphone062" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.08041e-07, -5.038e-08, -2.68933e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 8.25442, 1.52955, 4.47139 )
+
+[node name="Smartphone063" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 8.25442, 2.47677, 4.49861 )
+
+[node name="Smartphone064" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.08041e-07, -5.038e-08, -2.68933e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 8.25442, 2.47677, 4.96813 )
+
+[node name="Smartphone065" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 8.25442, 0.612742, 3.50434 )
+
+[node name="Smartphone066" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.0804e-07, -5.038e-08, -2.35052e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 8.25441, 0.612743, 3.97385 )
+
+[node name="Smartphone067" parent="DYN_OBJ/Desks" instance=ExtResource( 10 )]
+transform = Transform( -1, 8.74228e-08, -8.74228e-08, 8.74225e-08, 1, -8.74227e-08, 8.74228e-08, -8.74228e-08, -1, 9.60487, 1.08788, 5.21477 )
+
+[node name="Smartphone068" parent="DYN_OBJ/Desks" instance=ExtResource( 10 )]
+transform = Transform( -1, 8.74228e-08, -8.74228e-08, 8.74225e-08, 1, -8.74227e-08, 8.74228e-08, -8.74228e-08, -1, 9.60487, 1.08788, 4.22447 )
+
+[node name="Smartphone069" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 9.60889, 0.612743, 5.3723 )
+
+[node name="Smartphone070" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.0804e-07, -5.038e-08, -3.02814e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 9.60889, 0.612743, 5.84183 )
+
+[node name="Smartphone071" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 9.60888, 0.612743, 4.44617 )
+
+[node name="Smartphone072" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.0804e-07, -5.038e-08, -3.02814e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 9.60888, 0.612743, 4.91569 )
+
+[node name="Smartphone073" parent="DYN_OBJ/Desks" instance=ExtResource( 10 )]
+transform = Transform( -1, 8.74228e-08, -8.74228e-08, 8.74224e-08, 1, -8.74227e-08, 8.74228e-08, -8.74228e-08, -1, 9.60488, 2.0047, 4.77048 )
+
+[node name="Smartphone074" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 9.60889, 1.52955, 4.928 )
+
+[node name="Smartphone075" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.0804e-07, -5.038e-08, -3.02814e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 9.60889, 1.52955, 5.39753 )
+
+[node name="Smartphone076" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 9.60888, 1.52955, 4.00187 )
+
+[node name="Smartphone077" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.08041e-07, -5.038e-08, -3.02814e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 9.60889, 1.52955, 4.47139 )
+
+[node name="Smartphone078" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 9.60889, 2.47677, 4.49861 )
+
+[node name="Smartphone079" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.08041e-07, -5.038e-08, -3.02814e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 9.60889, 2.47677, 4.96813 )
+
+[node name="Smartphone080" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 9.60889, 0.612742, 3.50434 )
+
+[node name="Smartphone081" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.0804e-07, -5.038e-08, -2.68933e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 9.60888, 0.612743, 3.97385 )
+
+[node name="Smartphone082" parent="DYN_OBJ/Desks" instance=ExtResource( 10 )]
+transform = Transform( -1, 8.74228e-08, -8.74228e-08, 8.74224e-08, 1, -8.74227e-08, 8.74228e-08, -8.74228e-08, -1, 11.0492, 1.08788, 5.21477 )
+
+[node name="Smartphone083" parent="DYN_OBJ/Desks" instance=ExtResource( 10 )]
+transform = Transform( -1, 8.74228e-08, -8.74228e-08, 8.74224e-08, 1, -8.74227e-08, 8.74228e-08, -8.74228e-08, -1, 11.0492, 1.08788, 4.22447 )
+
+[node name="Smartphone084" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 11.0533, 0.612743, 5.37231 )
+
+[node name="Smartphone085" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.0804e-07, -5.038e-08, -3.36696e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 11.0532, 0.612743, 5.84183 )
+
+[node name="Smartphone086" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 11.0533, 0.612743, 4.44617 )
+
+[node name="Smartphone087" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.0804e-07, -5.038e-08, -3.36696e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 11.0533, 0.612743, 4.91569 )
+
+[node name="Smartphone088" parent="DYN_OBJ/Desks" instance=ExtResource( 10 )]
+transform = Transform( -1, 8.74228e-08, -8.74228e-08, 8.74224e-08, 1, -8.74227e-08, 8.74228e-08, -8.74228e-08, -1, 11.0492, 2.0047, 4.77048 )
+
+[node name="Smartphone089" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 11.0533, 1.52955, 4.928 )
+
+[node name="Smartphone090" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.0804e-07, -5.038e-08, -3.36696e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 11.0533, 1.52955, 5.39753 )
+
+[node name="Smartphone091" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 11.0533, 1.52955, 4.00187 )
+
+[node name="Smartphone092" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.08041e-07, -5.038e-08, -3.36696e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 11.0533, 1.52955, 4.47139 )
+
+[node name="Smartphone093" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 11.0533, 2.47677, 4.49861 )
+
+[node name="Smartphone094" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.08041e-07, -5.038e-08, -3.36696e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 11.0533, 2.47677, 4.96813 )
+
+[node name="Smartphone095" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 11.0533, 0.612742, 3.50434 )
+
+[node name="Smartphone096" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.0804e-07, -5.038e-08, -3.02814e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 11.0533, 0.612743, 3.97386 )
+
+[node name="Smartphone097" parent="DYN_OBJ/Desks" instance=ExtResource( 10 )]
+transform = Transform( -1, 8.74228e-08, -8.74228e-08, 8.74224e-08, 1, -8.74227e-08, 8.74228e-08, -8.74228e-08, -1, 12.4677, 1.08788, 5.21477 )
+
+[node name="Smartphone098" parent="DYN_OBJ/Desks" instance=ExtResource( 10 )]
+transform = Transform( -1, 8.74228e-08, -8.74228e-08, 8.74224e-08, 1, -8.74227e-08, 8.74228e-08, -8.74228e-08, -1, 12.4677, 1.08788, 4.22447 )
+
+[node name="Smartphone099" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 12.4717, 0.612743, 5.37231 )
+
+[node name="Smartphone100" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.0804e-07, -5.038e-08, -3.70577e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 12.4717, 0.612743, 5.84183 )
+
+[node name="Smartphone101" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 12.4717, 0.612743, 4.44617 )
+
+[node name="Smartphone102" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.0804e-07, -5.038e-08, -3.70577e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 12.4717, 0.612743, 4.91569 )
+
+[node name="Smartphone103" parent="DYN_OBJ/Desks" instance=ExtResource( 10 )]
+transform = Transform( -1, 8.74228e-08, -8.74228e-08, 8.74223e-08, 1, -8.74227e-08, 8.74228e-08, -8.74228e-08, -1, 12.4677, 2.0047, 4.77048 )
+
+[node name="Smartphone104" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 12.4717, 1.52955, 4.928 )
+
+[node name="Smartphone105" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.0804e-07, -5.038e-08, -3.70577e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 12.4717, 1.52955, 5.39753 )
+
+[node name="Smartphone106" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 12.4717, 1.52955, 4.00187 )
+
+[node name="Smartphone107" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.08041e-07, -5.038e-08, -3.70577e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 12.4717, 1.52955, 4.47139 )
+
+[node name="Smartphone108" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 12.4717, 2.47677, 4.49861 )
+
+[node name="Smartphone109" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.08041e-07, -5.038e-08, -3.70577e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 12.4717, 2.47677, 4.96813 )
+
+[node name="Smartphone110" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 12.4717, 0.612742, 3.50434 )
+
+[node name="Smartphone111" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.0804e-07, -5.038e-08, -3.36696e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 12.4717, 0.612743, 3.97386 )
+
+[node name="Smartphone112" parent="DYN_OBJ/Desks" instance=ExtResource( 10 )]
+transform = Transform( -1, 8.74228e-08, -8.74228e-08, 8.74224e-08, 1, -8.74227e-08, 8.74228e-08, -8.74228e-08, -1, 13.857, 1.08788, 5.21477 )
+
+[node name="Smartphone113" parent="DYN_OBJ/Desks" instance=ExtResource( 10 )]
+transform = Transform( -1, 8.74228e-08, -8.74228e-08, 8.74224e-08, 1, -8.74227e-08, 8.74228e-08, -8.74228e-08, -1, 13.857, 1.08788, 4.22447 )
+
+[node name="Smartphone114" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 13.8611, 0.612743, 5.37231 )
+
+[node name="Smartphone115" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.0804e-07, -5.038e-08, -4.04458e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 13.8611, 0.612743, 5.84183 )
+
+[node name="Smartphone116" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 13.8611, 0.612743, 4.44617 )
+
+[node name="Smartphone117" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.0804e-07, -5.038e-08, -4.04458e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 13.8611, 0.612743, 4.91569 )
+
+[node name="Smartphone118" parent="DYN_OBJ/Desks" instance=ExtResource( 10 )]
+transform = Transform( -1, 8.74228e-08, -8.74228e-08, 8.74223e-08, 1, -8.74227e-08, 8.74228e-08, -8.74228e-08, -1, 13.8571, 2.0047, 4.77048 )
+
+[node name="Smartphone119" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 13.8611, 1.52955, 4.92801 )
+
+[node name="Smartphone120" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.0804e-07, -5.038e-08, -4.04458e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 13.8611, 1.52955, 5.39753 )
+
+[node name="Smartphone121" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 13.8611, 1.52955, 4.00187 )
+
+[node name="Smartphone122" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.08041e-07, -5.038e-08, -4.04458e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 13.8611, 1.52955, 4.47139 )
+
+[node name="Smartphone123" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 13.8611, 2.47677, 4.49861 )
+
+[node name="Smartphone124" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.08041e-07, -5.038e-08, -4.04458e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 13.8611, 2.47677, 4.96813 )
+
+[node name="Smartphone125" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 13.8611, 0.612742, 3.50434 )
+
+[node name="Smartphone126" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.0804e-07, -5.038e-08, -3.70577e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 13.8611, 0.612743, 3.97386 )
+
+[node name="Smartphone127" parent="DYN_OBJ/Desks" instance=ExtResource( 10 )]
+transform = Transform( -1, 8.74228e-08, -8.74228e-08, 8.74224e-08, 1, -8.74227e-08, 8.74228e-08, -8.74228e-08, -1, 15.5273, 1.08788, 5.21477 )
+
+[node name="Smartphone128" parent="DYN_OBJ/Desks" instance=ExtResource( 10 )]
+transform = Transform( -1, 8.74228e-08, -8.74228e-08, 8.74224e-08, 1, -8.74227e-08, 8.74228e-08, -8.74228e-08, -1, 15.5273, 1.08788, 4.22447 )
+
+[node name="Smartphone129" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 15.5313, 0.612743, 5.37231 )
+
+[node name="Smartphone130" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.0804e-07, -5.038e-08, -4.3834e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 15.5313, 0.612743, 5.84183 )
+
+[node name="Smartphone131" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 15.5313, 0.612743, 4.44617 )
+
+[node name="Smartphone132" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.0804e-07, -5.038e-08, -4.3834e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 15.5313, 0.612743, 4.91569 )
+
+[node name="Smartphone133" parent="DYN_OBJ/Desks" instance=ExtResource( 10 )]
+transform = Transform( -1, 8.74228e-08, -8.74228e-08, 8.74223e-08, 1, -8.74227e-08, 8.74228e-08, -8.74228e-08, -1, 15.5273, 2.0047, 4.77048 )
+
+[node name="Smartphone134" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 15.5313, 1.52955, 4.92801 )
+
+[node name="Smartphone135" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.0804e-07, -5.038e-08, -4.3834e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 15.5313, 1.52955, 5.39753 )
+
+[node name="Smartphone136" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 15.5313, 1.52955, 4.00187 )
+
+[node name="Smartphone137" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.08041e-07, -5.038e-08, -4.3834e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 15.5313, 1.52955, 4.47139 )
+
+[node name="Smartphone138" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 15.5313, 2.47677, 4.49861 )
+
+[node name="Smartphone139" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.08041e-07, -5.038e-08, -4.3834e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 15.5313, 2.47677, 4.96813 )
+
+[node name="Smartphone140" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -1, -1.87272e-07, -8.73264e-08, -8.47033e-21, 0.422618, -0.906308, 2.06632e-07, -0.906308, -0.422618, 15.5314, 0.612742, 3.50435 )
+
+[node name="Smartphone141" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 1, -1.0804e-07, -5.038e-08, -4.04458e-20, 0.422618, -0.906308, 1.1921e-07, 0.906308, 0.422618, 15.5313, 0.612743, 3.97386 )
+
+[node name="SchoolBook002" parent="DYN_OBJ/Desks" instance=ExtResource( 25 )]
+transform = Transform( 0.995157, 0, -0.0982951, 0, 1, 0, 0.0982951, 0, 0.995157, -6.90731, 5.12245, 13.3993 )
+
+[node name="SchoolBook003" parent="DYN_OBJ/Desks" instance=ExtResource( 20 )]
+transform = Transform( -0.99376, 0, -0.111538, 0, 1, 0, 0.111538, 0, -0.99376, -6.91906, 5.25818, 15.1954 )
+
+[node name="SchoolBook005" parent="DYN_OBJ/Desks" instance=ExtResource( 20 )]
+transform = Transform( 0.98947, 0, -0.144736, 0, 1, 0, 0.144736, 0, 0.98947, -6.91906, 5.25818, 18.2801 )
+
+[node name="SchoolBook006" parent="DYN_OBJ/Desks" instance=ExtResource( 20 )]
+transform = Transform( -0.992818, 8.67949e-08, 0.119634, -8.74228e-08, -1, 0, 0.119634, -1.04588e-08, 0.992818, -6.91906, 5.15638, 19.9713 )
+
+[node name="SchoolBook004" parent="DYN_OBJ/Desks" instance=ExtResource( 25 )]
+transform = Transform( 0.992274, 0, -0.124069, 0, 1, 0, 0.124069, 0, 0.992274, -6.93993, 5.39397, 16.8783 )
+
+[node name="Desk8" parent="DYN_OBJ/Desks" instance=ExtResource( 37 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.65546, 0.341359, 10.5352 )
+
+[node name="Desk17" parent="DYN_OBJ/Desks" instance=ExtResource( 37 )]
+transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -14.6555, 0.341359, 11.6924 )
+
+[node name="SchoolBook002" parent="DYN_OBJ/Desks/Desk17" instance=ExtResource( 25 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.742208, 4.78309, -3.55002 )
+
+[node name="SchoolBook001" parent="DYN_OBJ/Desks/Desk17" instance=ExtResource( 28 )]
+transform = Transform( -8.395e-08, -0.605294, -0.955202, 5.29165e-08, 0.796002, -0.726353, 1, -9.29361e-08, -4.17532e-08, 1.51608, 5.59549, -0.187192 )
+
+[node name="Desk18" parent="DYN_OBJ/Desks" instance=ExtResource( 37 )]
+transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -14.6555, 0.341359, 21.9805 )
+
+[node name="SchoolBook002" parent="DYN_OBJ/Desks/Desk18" instance=ExtResource( 25 )]
+transform = Transform( 7.71783e-09, 0.708352, 0.705859, 1.23852e-07, 0.705859, -0.708352, -1, 9.28892e-08, -8.22833e-08, -1.78321, 5.66651, -0.7648 )
+
+[node name="SchoolBook003" parent="DYN_OBJ/Desks/Desk18" instance=ExtResource( 20 )]
+transform = Transform( -3.03401e-08, 0.383538, 0.923525, 6.70599e-08, 0.923525, -0.383538, -1, 5.02949e-08, -5.37399e-08, -0.478361, 5.16451, -0.817908 )
+
+[node name="Desk9" parent="DYN_OBJ/Desks" instance=ExtResource( 37 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10.3445, 0.341359, 10.5352 )
+
+[node name="Desk13" parent="DYN_OBJ/Desks" instance=ExtResource( 37 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 19.3445, 0.341359, 10.5352 )
+
+[node name="Desk10" parent="DYN_OBJ/Desks" instance=ExtResource( 37 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.34454, 0.341359, -1.28264 )
+
+[node name="Desk11" parent="DYN_OBJ/Desks" instance=ExtResource( 37 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.65546, 0.341359, -1.28264 )
+
+[node name="Desk19" parent="DYN_OBJ/Desks" instance=ExtResource( 37 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, -8.47033e-22, -1, 0, -4.37114e-08, -7.65546, 0.341359, -1.28264 )
+
+[node name="Desk15" parent="DYN_OBJ/Desks" instance=ExtResource( 37 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.3875, 0.341359, -1.28264 )
+
+[node name="Desk16" parent="DYN_OBJ/Desks" instance=ExtResource( 37 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.8942, 0.341359, -1.28264 )
+
+[node name="Magnet001" parent="DYN_OBJ/Desks/Desk16" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02438, 4.9915, -1.55208 )
+
+[node name="Magnet002" parent="DYN_OBJ/Desks/Desk16" instance=ExtResource( 22 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.38823, 4.9915, -1.77794 )
+
+[node name="Magnet003" parent="DYN_OBJ/Desks/Desk16" instance=ExtResource( 23 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.62651, 4.9915, -0.135599 )
+
+[node name="Magnet004" parent="DYN_OBJ/Desks/Desk16" instance=ExtResource( 29 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.72292, 4.9915, -0.524797 )
+
+[node name="Magnet005" parent="DYN_OBJ/Desks/Desk16" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.501863, 4.9915, -0.295792 )
+
+[node name="Magnet006" parent="DYN_OBJ/Desks/Desk16" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.237097, 4.9915, 0.441448 )
+
+[node name="Magnet007" parent="DYN_OBJ/Desks/Desk16" instance=ExtResource( 23 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0452251, 4.9915, -1.50943 )
+
+[node name="Magnet008" parent="DYN_OBJ/Desks/Desk16" instance=ExtResource( 22 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.68656, 4.9915, -0.529072 )
+
+[node name="Magnet009" parent="DYN_OBJ/Desks/Desk16" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.12098, 4.9915, 0.638923 )
+
+[node name="Magnet010" parent="DYN_OBJ/Desks/Desk16" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.54284, 4.9915, 1.0143 )
+
+[node name="Desk12" parent="DYN_OBJ/Desks" instance=ExtResource( 37 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10.3445, 0.341359, -1.28264 )
+
+[node name="Desk14" parent="DYN_OBJ/Desks" instance=ExtResource( 37 )]
+transform = Transform( 1.31134e-07, 0, -1, 0, 1, -3.38813e-21, 1, 0, 1.31134e-07, 25.8476, 0.341359, -1.28264 )
+
+[node name="DeskChair001" parent="DYN_OBJ/Desks" instance=ExtResource( 12 )]
+transform = Transform( 0.809181, 0, 0.587559, 0, 1, 0, -0.587559, 0, 0.809181, 10.1238, 0.240218, 32.6852 )
+
+[node name="DeskChair004" parent="DYN_OBJ/Desks" instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12.9406, 0.240218, 22.127 )
+
+[node name="DeskChair005" parent="DYN_OBJ/Desks" instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.9406, 0.240218, 22.127 )
+
+[node name="DeskChair006" parent="DYN_OBJ/Desks" instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.0594, 0.240218, 22.127 )
+
+[node name="DeskChair013" parent="DYN_OBJ/Desks" instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 19.4768, 0.240218, 10.4489 )
+
+[node name="DeskChair008" parent="DYN_OBJ/Desks" instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.9406, 0.240218, 10.4489 )
+
+[node name="DeskChair009" parent="DYN_OBJ/Desks" instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.0594, 0.240218, 10.4489 )
+
+[node name="DeskChair016" parent="DYN_OBJ/Desks" instance=ExtResource( 12 )]
+transform = Transform( -0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, -14.3336, 0.240218, 5.40731 )
+
+[node name="Pencil001" parent="DYN_OBJ/Desks/DeskChair016" instance=ExtResource( 9 )]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.0305386, 3.54849, 1.69589 )
+
+[node name="Pencil002" parent="DYN_OBJ/Desks/DeskChair016" instance=ExtResource( 9 )]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.364998, 3.54849, 0.697399 )
+
+[node name="Pencil003" parent="DYN_OBJ/Desks/DeskChair016" instance=ExtResource( 9 )]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.744386, 3.54849, 1.41046 )
+
+[node name="Pencil004" parent="DYN_OBJ/Desks/DeskChair016" instance=ExtResource( 39 )]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.487088, 3.52524, 1.74871 )
+
+[node name="Pencil005" parent="DYN_OBJ/Desks/DeskChair016" instance=ExtResource( 39 )]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.102856, 3.52524, 1.11926 )
+
+[node name="Pencil006" parent="DYN_OBJ/Desks/DeskChair016" instance=ExtResource( 39 )]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.601802, 3.52524, 0.9576 )
+
+[node name="DeskChair010" parent="DYN_OBJ/Desks" instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12.9406, 0.240218, -1.46903 )
+
+[node name="DeskChair014" parent="DYN_OBJ/Desks" instance=ExtResource( 12 )]
+transform = Transform( 1.31134e-07, 0, -1, 0, 1, -3.38813e-21, 1, 0, 1.31134e-07, 25.2028, 0.240218, -1.46903 )
+
+[node name="DeskChair011" parent="DYN_OBJ/Desks" instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.9406, 0.240218, -1.46903 )
+
+[node name="DeskChair003" parent="DYN_OBJ/Desks" instance=ExtResource( 40 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.16095, 0.181801, 34.3488 )
+
+[node name="DeskChair015" parent="DYN_OBJ/Desks" instance=ExtResource( 40 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.11529, 0.181801, 34.3488 )
+
+[node name="DeskChair002" parent="DYN_OBJ/Desks" instance=ExtResource( 41 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.14604, 0.242675, -1.11558 )
+
+[node name="DeskChair012" parent="DYN_OBJ/Desks" instance=ExtResource( 41 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12.8929, 0.242676, 10.5108 )
+
+[node name="Smartphone002" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( 0.634182, -0.563386, -0.529537, -0.433631, 0.307865, -0.846867, 0.640139, 0.766691, -0.0490597, -13.5242, 5.93076, -0.919791 )
+
+[node name="Smartphone003" parent="DYN_OBJ/Desks" instance=ExtResource( 45 )]
+transform = Transform( -0.465176, 0.728427, 0.502997, -0.433631, 0.307864, -0.846867, -0.771735, -0.612057, 0.172657, -13.0915, 5.93076, -1.4845 )
+
+[node name="Floor" type="Spatial" parent="DYN_OBJ"]
+transform = Transform( 1, 0, 8.74231e-08, 2.84217e-14, 1, -8.74228e-08, -8.74231e-08, 8.74228e-08, 1, -9.34447, 0.711514, 17.309 )
+
+[node name="CandyWrapper002" parent="DYN_OBJ/Floor" instance=ExtResource( 33 )]
+transform = Transform( 1, 0, 0, -8.47033e-22, 1, 0, 0, 0, 1, 0.843726, -0.421736, 0.129473 )
+
+[node name="CandyWrapper003" parent="DYN_OBJ/Floor" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, -8.47033e-22, 1, 0, 0, 0, 1, 0.902956, -0.440089, -0.590982 )
+
+[node name="CandyWrapper004" parent="DYN_OBJ/Floor" instance=ExtResource( 34 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.49521, -0.500087, 0.333258 )
+
+[node name="CandyWrapper005" parent="DYN_OBJ/Floor" instance=ExtResource( 24 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.21039, -0.498151, 0.0647392 )
+
+[node name="CandyWrapper006" parent="DYN_OBJ/Floor" instance=ExtResource( 36 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.06158, -0.451873, -0.468544 )
+
+[node name="CandyWrapper008" parent="DYN_OBJ/Floor" instance=ExtResource( 31 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.39871, -0.508883, 0.282438 )
+
+[node name="CandyWrapper007" parent="DYN_OBJ/Floor" instance=ExtResource( 30 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54538, -0.466888, -0.323721 )
+
+[node name="CandyWrapper009" parent="DYN_OBJ/Floor" instance=ExtResource( 32 )]
+transform = Transform( 1, 0, 0, -8.47033e-22, 1, 0, 0, 0, 1, 4.01998, -0.453458, 0.63979 )
+
+[node name="CandyWrapper010" parent="DYN_OBJ/Floor" instance=ExtResource( 33 )]
+transform = Transform( 1, 0, 0, -8.47033e-22, 1, 0, 0, 0, 1, 4.64678, -0.426803, 0.129473 )
+
+[node name="CandyWrapper011" parent="DYN_OBJ/Floor" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.70601, -0.478187, -0.590982 )
+
+[node name="CandyWrapper012" parent="DYN_OBJ/Floor" instance=ExtResource( 34 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.29826, -0.500087, 0.333258 )
+
+[node name="CandyWrapper013" parent="DYN_OBJ/Floor" instance=ExtResource( 24 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.59439, -0.498151, -0.227947 )
+
+[node name="CandyWrapper014" parent="DYN_OBJ/Floor" instance=ExtResource( 36 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.67934, -0.451873, 0.874737 )
+
+[node name="CandyWrapper015" parent="DYN_OBJ/Floor" instance=ExtResource( 31 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.20176, -0.508883, 0.282438 )
+
+[node name="CandyWrapper016" parent="DYN_OBJ/Floor" instance=ExtResource( 30 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.34389, -0.466888, 0.581886 )
+
+[node name="CandyWrapper017" parent="DYN_OBJ/Floor" instance=ExtResource( 32 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.18131, -0.493981, -0.686794 )
+
+[node name="CandyWrapper018" parent="DYN_OBJ/Floor" instance=ExtResource( 33 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.14238, -0.46426, 0.129473 )
+
+[node name="CandyWrapper019" parent="DYN_OBJ/Floor" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.20161, -0.478187, -0.590982 )
+
+[node name="CandyWrapper020" parent="DYN_OBJ/Floor" instance=ExtResource( 34 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.79387, -0.500087, 0.333258 )
+
+[node name="CandyWrapper021" parent="DYN_OBJ/Floor" instance=ExtResource( 24 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.09, -0.276848, -0.743011 )
+
+[node name="CandyWrapper022" parent="DYN_OBJ/Floor" instance=ExtResource( 36 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.17856, -0.451873, -0.650768 )
+
+[node name="CandyWrapper023" parent="DYN_OBJ/Floor" instance=ExtResource( 31 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.69736, -0.508883, 0.282438 )
+
+[node name="CandyWrapper024" parent="DYN_OBJ/Floor" instance=ExtResource( 30 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.32, -0.466887, -0.357466 )
+
+[node name="CandyWrapper025" parent="DYN_OBJ/Floor" instance=ExtResource( 32 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0723, -0.493981, -0.201159 )
+
+[node name="CandyWrapper026" parent="DYN_OBJ/Floor" instance=ExtResource( 33 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5834, -0.46426, 0.129473 )
+
+[node name="CandyWrapper027" parent="DYN_OBJ/Floor" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4974, -0.478187, 0.348675 )
+
+[node name="CandyWrapper028" parent="DYN_OBJ/Floor" instance=ExtResource( 34 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2349, -0.500087, 0.333258 )
+
+[node name="CandyWrapper029" parent="DYN_OBJ/Floor" instance=ExtResource( 24 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.531, -0.498151, -0.227947 )
+
+[node name="CandyWrapper030" parent="DYN_OBJ/Floor" instance=ExtResource( 36 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7082, -0.451873, 0.943464 )
+
+[node name="CandyWrapper031" parent="DYN_OBJ/Floor" instance=ExtResource( 31 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4225, -0.508883, -0.912952 )
+
+[node name="CandyWrapper032" parent="DYN_OBJ/Floor" instance=ExtResource( 30 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.2805, -0.466888, 0.581886 )
+
+[node name="CandyWrapper033" parent="DYN_OBJ/Floor" instance=ExtResource( 32 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5133, -0.493981, -0.201159 )
+
+[node name="CandyWrapper034" parent="DYN_OBJ/Floor" instance=ExtResource( 33 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.6748, -0.46426, 0.129473 )
+
+[node name="CandyWrapper035" parent="DYN_OBJ/Floor" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.734, -0.478187, -0.590982 )
+
+[node name="CandyWrapper036" parent="DYN_OBJ/Floor" instance=ExtResource( 34 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.3262, -0.500087, 0.333258 )
+
+[node name="CandyWrapper037" parent="DYN_OBJ/Floor" instance=ExtResource( 24 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.0414, -0.498151, 0.0647392 )
+
+[node name="CandyWrapper038" parent="DYN_OBJ/Floor" instance=ExtResource( 36 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.8926, -0.451873, -0.468544 )
+
+[node name="CandyWrapper039" parent="DYN_OBJ/Floor" instance=ExtResource( 31 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.2297, -0.508883, 0.282438 )
+
+[node name="CandyWrapper040" parent="DYN_OBJ/Floor" instance=ExtResource( 30 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.3764, -0.466888, -0.323721 )
+
+[node name="CandyWrapper041" parent="DYN_OBJ/Floor" instance=ExtResource( 32 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.851, -0.493981, 0.63979 )
+
+[node name="CandyWrapper042" parent="DYN_OBJ/Floor" instance=ExtResource( 33 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.4778, -0.46426, 0.129473 )
+
+[node name="CandyWrapper043" parent="DYN_OBJ/Floor" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.537, -0.478187, -0.590982 )
+
+[node name="CandyWrapper044" parent="DYN_OBJ/Floor" instance=ExtResource( 34 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.1293, -0.500087, 0.333258 )
+
+[node name="CandyWrapper045" parent="DYN_OBJ/Floor" instance=ExtResource( 24 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21.4254, -0.498151, -0.227947 )
+
+[node name="CandyWrapper046" parent="DYN_OBJ/Floor" instance=ExtResource( 36 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5104, -0.451873, 0.874737 )
+
+[node name="CandyWrapper047" parent="DYN_OBJ/Floor" instance=ExtResource( 31 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0328, -0.508883, 0.282438 )
+
+[node name="CandyWrapper048" parent="DYN_OBJ/Floor" instance=ExtResource( 30 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.1749, -0.466888, 0.581886 )
+
+[node name="CandyWrapper049" parent="DYN_OBJ/Floor" instance=ExtResource( 32 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.0123, -0.493981, -0.686794 )
+
+[node name="CandyWrapper050" parent="DYN_OBJ/Floor" instance=ExtResource( 33 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.9734, -0.46426, 0.129473 )
+
+[node name="CandyWrapper051" parent="DYN_OBJ/Floor" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.0326, -0.478187, -0.590982 )
+
+[node name="CandyWrapper052" parent="DYN_OBJ/Floor" instance=ExtResource( 34 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.6249, -0.500087, 0.333258 )
+
+[node name="CandyWrapper053" parent="DYN_OBJ/Floor" instance=ExtResource( 24 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.921, -0.276848, -0.743011 )
+
+[node name="CandyWrapper054" parent="DYN_OBJ/Floor" instance=ExtResource( 36 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.0096, -0.451873, -0.650768 )
+
+[node name="CandyWrapper055" parent="DYN_OBJ/Floor" instance=ExtResource( 31 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5284, -0.508883, 0.282438 )
+
+[node name="CandyWrapper056" parent="DYN_OBJ/Floor" instance=ExtResource( 30 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.151, -0.466887, -0.357466 )
+
+[node name="CandyWrapper057" parent="DYN_OBJ/Floor" instance=ExtResource( 32 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.9033, -0.493981, -0.201159 )
+
+[node name="CandyWrapper058" parent="DYN_OBJ/Floor" instance=ExtResource( 33 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.4144, -0.46426, 0.129473 )
+
+[node name="CandyWrapper059" parent="DYN_OBJ/Floor" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.3284, -0.478187, 0.348675 )
+
+[node name="CandyWrapper060" parent="DYN_OBJ/Floor" instance=ExtResource( 34 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.0659, -0.500087, 0.333258 )
+
+[node name="CandyWrapper061" parent="DYN_OBJ/Floor" instance=ExtResource( 24 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.3621, -0.498151, -0.227947 )
+
+[node name="CandyWrapper062" parent="DYN_OBJ/Floor" instance=ExtResource( 36 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.5392, -0.451873, 0.943464 )
+
+[node name="CandyWrapper063" parent="DYN_OBJ/Floor" instance=ExtResource( 31 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.2535, -0.508883, -0.912952 )
+
+[node name="CandyWrapper064" parent="DYN_OBJ/Floor" instance=ExtResource( 30 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.4256, -0.466888, 1.1465 )
+
+[node name="CandyWrapper065" parent="DYN_OBJ/Floor" instance=ExtResource( 32 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.3444, -0.493981, -0.201159 )
+
+[node name="CandyWrapper066" parent="DYN_OBJ/Floor" instance=ExtResource( 33 )]
+transform = Transform( 0.591732, 0, -0.806135, 0, 1, 0, 0.806135, 0, 0.591732, 29.9527, -0.464261, 0.515617 )
+
+[node name="CandyWrapper067" parent="DYN_OBJ/Floor" instance=ExtResource( 35 )]
+transform = Transform( 0.591732, 0, -0.806135, 0, 1, 0, 0.806135, 0, 0.591732, 29.4506, -0.478188, 1.09053 )
+
+[node name="CandyWrapper068" parent="DYN_OBJ/Floor" instance=ExtResource( 34 )]
+transform = Transform( 0.591732, 0, -0.806135, 0, 1, 0, 0.806135, 0, 0.591732, 30.1739, -0.500088, 1.16139 )
+
+[node name="CandyWrapper069" parent="DYN_OBJ/Floor" instance=ExtResource( 24 )]
+transform = Transform( 0.591732, 0, -0.806135, 0, 1, 0, 0.806135, 0, 0.591732, 32.0716, -0.498152, 2.05064 )
+
+[node name="CandyWrapper070" parent="DYN_OBJ/Floor" instance=ExtResource( 36 )]
+transform = Transform( 0.591732, 0, -0.806135, 0, 1, 0, 0.806135, 0, 0.591732, 31.1554, -0.451874, 1.14351 )
+
+[node name="CandyWrapper071" parent="DYN_OBJ/Floor" instance=ExtResource( 31 )]
+transform = Transform( 0.591732, 0, -0.806135, 0, 1, 0, 0.806135, 0, 0.591732, 30.7495, -0.508884, 1.85965 )
+
+[node name="CandyWrapper072" parent="DYN_OBJ/Floor" instance=ExtResource( 30 )]
+transform = Transform( 0.591732, 0, -0.806135, 0, 1, 0, 0.806135, 0, 0.591732, 32.5647, -0.466889, 5.48974 )
+
+[node name="CandyWrapper073" parent="DYN_OBJ/Floor" instance=ExtResource( 32 )]
+transform = Transform( 0.591732, 0, -0.806135, 0, 1, 0, 0.806135, 0, 0.591732, 31.2523, -0.493982, 2.72233 )
+
+[node name="CandyWrapper074" parent="DYN_OBJ/Floor" instance=ExtResource( 33 )]
+transform = Transform( 0.591732, 0, -0.806135, 0, 1, 0, 0.806135, 0, 0.591732, 32.2031, -0.464261, 3.58138 )
+
+[node name="CandyWrapper075" parent="DYN_OBJ/Floor" instance=ExtResource( 35 )]
+transform = Transform( 0.591732, 0, -0.806135, 0, 1, 0, 0.806135, 0, 0.591732, 32.8189, -0.478188, 3.20282 )
+
+[node name="CandyWrapper076" parent="DYN_OBJ/Floor" instance=ExtResource( 34 )]
+transform = Transform( 0.591732, 0, -0.806135, 0, 1, 0, 0.806135, 0, 0.591732, 32.4243, -0.500088, 4.22716 )
+
+[node name="CandyWrapper077" parent="DYN_OBJ/Floor" instance=ExtResource( 24 )]
+transform = Transform( 0.591732, 0, -0.806135, 0, 1, 0, 0.806135, 0, 0.591732, 33.6437, -0.498152, 4.93994 )
+
+[node name="CandyWrapper078" parent="DYN_OBJ/Floor" instance=ExtResource( 36 )]
+transform = Transform( 0.591732, 0, -0.806135, 0, 1, 0, 0.806135, 0, 0.591732, 33.2814, -0.451875, 3.89877 )
+
+[node name="CandyWrapper079" parent="DYN_OBJ/Floor" instance=ExtResource( 31 )]
+transform = Transform( 0.591732, 0, -0.806135, 0, 1, 0, 0.806135, 0, 0.591732, 32.9999, -0.508884, 4.92542 )
+
+[node name="CandyWrapper081" parent="DYN_OBJ/Floor" instance=ExtResource( 32 )]
+transform = Transform( 0.591732, 0, -0.806135, 0, 1, 0, 0.806135, 0, 0.591732, 34.3609, -0.493982, 5.14155 )
+
+[node name="CandyWrapper082" parent="DYN_OBJ/Floor" instance=ExtResource( 33 )]
+transform = Transform( 0.591732, 0, -0.806135, 0, 1, 0, 0.806135, 0, 0.591732, 34.2715, -0.464261, 6.39932 )
+
+[node name="CandyWrapper083" parent="DYN_OBJ/Floor" instance=ExtResource( 35 )]
+transform = Transform( 0.591732, 0, -0.806135, 0, 1, 0, 0.806135, 0, 0.591732, 34.8874, -0.478188, 6.02075 )
+
+[node name="CandyWrapper084" parent="DYN_OBJ/Floor" instance=ExtResource( 34 )]
+transform = Transform( 0.591732, 0, -0.806135, 0, 1, 0, 0.806135, 0, 0.591732, 34.4928, -0.500088, 7.04509 )
+
+[node name="CandyWrapper085" parent="DYN_OBJ/Floor" instance=ExtResource( 24 )]
+transform = Transform( 0.591732, 0, -0.806135, 0, 1, 0, 0.806135, 0, 0.591732, 35.2827, -0.276849, 7.02338 )
+
+[node name="CandyWrapper086" parent="DYN_OBJ/Floor" instance=ExtResource( 36 )]
+transform = Transform( 0.591732, 0, -0.806135, 0, 1, 0, 0.806135, 0, 0.591732, 33.5334, -0.451874, 5.98823 )
+
+[node name="CandyWrapper087" parent="DYN_OBJ/Floor" instance=ExtResource( 31 )]
+transform = Transform( 0.591732, 0, -0.806135, 0, 1, 0, 0.806135, 0, 0.591732, 35.0684, -0.508884, 7.74336 )
+
+[node name="SchoolBook007" parent="DYN_OBJ" instance=ExtResource( 25 )]
+transform = Transform( 0.249214, 0.201352, -0.947285, -4.03386e-07, 0.978148, 0.207912, 0.968448, -0.0518142, 0.243768, -7.24217, 1.31182, 5.4136 )
+
+[node name="eraser" parent="DYN_OBJ/SchoolBook007" instance=ExtResource( 27 )]
+transform = Transform( 1, 1.86265e-08, 0, 1.49012e-08, 1, -9.31323e-10, -2.98023e-08, -2.42144e-08, 1, -0.0457315, 0.141987, -0.304292 )
+
+[node name="SchoolBook008" parent="DYN_OBJ" instance=ExtResource( 20 )]
+transform = Transform( 0.31139, 0.213767, 0.925927, 4.46303e-07, 0.97437, -0.224951, -0.950282, 0.0700481, 0.303409, -8.91717, 1.84231, 5.3889 )
+
+[node name="eraser" parent="DYN_OBJ/SchoolBook008" instance=ExtResource( 27 )]
+transform = Transform( 1, 2.23517e-08, 2.98023e-08, 7.45058e-09, 1, -3.72529e-09, 0, -2.23517e-08, 1, 0.0750437, 0.159376, 0.24536 )
+
+[node name="SchoolBook015" parent="DYN_OBJ" instance=ExtResource( 20 )]
+transform = Transform( 0.0140147, 0.224929, 0.974274, 4.50641e-07, 0.97437, -0.224951, -0.999902, 0.00315303, 0.0136555, -5.61572, 0.745715, 5.3889 )
+
+[node name="SchoolBook016" parent="DYN_OBJ" instance=ExtResource( 20 )]
+transform = Transform( 0.541678, 0.172967, -0.822598, -0.018393, 0.980805, 0.194122, 0.840385, -0.0900212, 0.534461, -4.13289, 0.240344, 5.3889 )
+
+[node name="SchoolBook010" parent="DYN_OBJ" instance=ExtResource( 20 )]
+transform = Transform( 0.355005, 0.279125, 0.892222, -0.00665176, 0.955117, -0.296154, -0.934841, 0.0992015, 0.340928, -11.6004, 2.84141, 5.2025 )
+
+[node name="eraser" parent="DYN_OBJ/SchoolBook010" instance=ExtResource( 27 )]
+transform = Transform( 1, -1.49012e-08, 5.96046e-08, 7.45058e-09, 1, 1.86265e-08, -2.98023e-08, -8.56817e-08, 1, -0.108835, 0.132332, -0.043189 )
+
+[node name="SchoolBook009" parent="DYN_OBJ" instance=ExtResource( 25 )]
+transform = Transform( -0.0117456, 0.224936, 0.974303, 4.04907e-07, 0.97437, -0.224951, -0.999931, -0.00264184, -0.0114446, -10.5271, 2.32557, 5.4308 )
+
+[node name="eraser" parent="DYN_OBJ/SchoolBook009" instance=ExtResource( 27 )]
+transform = Transform( 1, 1.86265e-09, 0, -1.62981e-09, 1, -1.03664e-07, 2.79397e-09, 1.054e-07, 1, -0.135958, 0.147054, 0.499192 )
+
+[node name="SchoolBook011" parent="DYN_OBJ" instance=ExtResource( 25 )]
+transform = Transform( -0.160897, 0.205203, -0.965403, -4.05005e-07, 0.978148, 0.207912, 0.986971, 0.0334528, -0.157381, -15.4159, 3.27327, 4.0884 )
+
+[node name="eraser" parent="DYN_OBJ/SchoolBook011" instance=ExtResource( 27 )]
+transform = Transform( 1, 3.72529e-09, -7.45058e-08, 7.45058e-09, 1, -1.14087e-07, 7.45058e-08, -4.51691e-08, 1, -0.0398955, 0.190657, -0.191485 )
+
+[node name="SchoolBook012" parent="DYN_OBJ" instance=ExtResource( 20 )]
+transform = Transform( 0.358759, 0.209976, 0.909506, 4.4483e-07, 0.97437, -0.224951, -0.93343, 0.0807039, 0.349564, -17.0729, 3.80376, 3.6897 )
+
+[node name="eraser" parent="DYN_OBJ/SchoolBook012" instance=ExtResource( 27 )]
+transform = Transform( 1, 7.45058e-09, -2.98023e-08, 2.98023e-08, 1, -3.35276e-08, 0, -3.53903e-08, 1, 0.181843, 0.177684, 0.309287 )
+
+[node name="SchoolBook013" parent="DYN_OBJ" instance=ExtResource( 20 )]
+transform = Transform( 0.959826, 0.0628596, 0.273466, 0.00519251, 0.970439, -0.241292, -0.280549, 0.233019, 0.931125, -19.1688, 4.96314, 1.6064 )
+
+[node name="eraser" parent="DYN_OBJ/SchoolBook013" instance=ExtResource( 27 )]
+transform = Transform( 1, 0, 0, 2.23517e-08, 1, -1.49012e-08, -1.19209e-07, 0, 1, 0.17205, 0.150586, -0.172225 )
+
+[node name="SchoolBook014" parent="DYN_OBJ" instance=ExtResource( 25 )]
+transform = Transform( 0.481618, 0.263154, 0.835938, -0.033002, 0.958623, -0.28276, -0.875759, 0.108595, 0.470375, -18.3459, 4.31474, 2.9958 )
+
+[node name="eraser" parent="DYN_OBJ/SchoolBook014" instance=ExtResource( 27 )]
+transform = Transform( 1, -7.45058e-09, 0, -7.45058e-09, 1, -3.72529e-09, 1.49012e-07, 8.19564e-08, 1, 0.0238695, 0.14142, -0.0189104 )
+
+[node name="eraser" parent="DYN_OBJ" instance=ExtResource( 27 )]
+transform = Transform( 1, 0, 8.74231e-08, 2.84217e-14, 1, -8.74228e-08, -8.74231e-08, 8.74228e-08, 1, -6.59093, 5.14104, 8.53317 )
+
+[node name="Pencil001" parent="DYN_OBJ" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 8.74231e-08, 2.84217e-14, 1, -8.74228e-08, -8.74231e-08, 8.74228e-08, 1, -6.21396, 5.16104, 8.9061 )
+
+[node name="Whiteboard" parent="DYN_OBJ" instance=ExtResource( 13 )]
+transform = Transform( -2.50344e-07, 0, 1, 8.74228e-08, 1, 2.84217e-14, -1, 8.74228e-08, -2.50344e-07, -24.8518, 5.91316, 15.6935 )
+
+[node name="Whiteboard2" parent="DYN_OBJ" instance=ExtResource( 13 )]
+transform = Transform( 2.25705e-07, -8.52651e-14, -1, -6.99382e-08, 0.9, -2.84217e-14, 0.8, 7.86805e-08, 2.8213e-07, 27.8539, 5.91316, 13.9012 )
+
+[node name="TV Stand" parent="DYN_OBJ" instance=ExtResource( 14 )]
+transform = Transform( -0.43196, 0, 0.901893, 7.88463e-08, 1, 3.77634e-08, -0.901893, 8.74228e-08, -0.43196, -21.8569, 0.134997, 28.7654 )
+
+[node name="TV" parent="DYN_OBJ/TV Stand" instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 7.10085, 0 )
+
+[node name="Clock" parent="DYN_OBJ" instance=ExtResource( 15 )]
+transform = Transform( 4.37121e-08, 0, -1, -8.74228e-08, 1, 0, 1, 8.74228e-08, 4.37121e-08, 27.8805, 10.2892, 26.3267 )
+
+[node name="TeacherDesk" parent="." instance=ExtResource( 38 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15.0455, 0.125381, 16.843 )
+
+[node name="TrashBin002" parent="." instance=ExtResource( 43 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 27.0468, 0.154, 26.1019 )
+
+[node name="Umbrella001" parent="." instance=ExtResource( 44 )]
+transform = Transform( -4.11692e-08, 0.33606, 0.941841, 1.46896e-08, 0.941841, -0.33606, -1, 0, -4.37114e-08, 25.8736, 0.154, 28.6183 )
+
+[node name="Umbrella003" parent="." instance=ExtResource( 44 )]
+transform = Transform( -1, -5.74436e-09, -1.49309e-07, -2.7935e-08, 0.988829, 0.149052, 1.46785e-07, 0.149052, -0.988829, 25.5347, 0.154, 31.0262 )
+
+[node name="Umbrella006" parent="." instance=ExtResource( 44 )]
+transform = Transform( -1, -5.74436e-09, -1.49309e-07, -1.22098e-07, 0.607417, 0.794383, 8.61297e-08, 0.794383, -0.607417, 26.9843, 0.154, 20.8306 )
+
+[node name="Umbrella004" parent="." instance=ExtResource( 44 )]
+transform = Transform( -4.40357e-08, 0.149052, 0.988829, 1.49045e-08, 0.988829, -0.149052, -1, 8.17437e-09, -4.57653e-08, 26.9587, 0.154, 31.2639 )
+
+[node name="Umbrella002" parent="." instance=ExtResource( 42 )]
+transform = Transform( -4.27218e-08, 0.211581, -0.97736, 9.24848e-09, 0.97736, 0.211581, 1, 0, -4.37114e-08, 26.6382, 0.154, 30.0828 )
+
+[node name="Umbrella005" parent="." instance=ExtResource( 42 )]
+transform = Transform( 0.93089, -0.365299, -1.59677e-08, 0, -4.37114e-08, 1, -0.365299, -0.93089, -4.06905e-08, 26.8963, 0.591047, 32.3166 )
+
+[node name="SchoolBook002" parent="." instance=ExtResource( 25 )]
+transform = Transform( 1, 0, 0, 0, 0.5, -0.866025, 0, 0.866025, 0.5, 6, 1.23342, 28.487 )
+
+[node name="SchoolBook003" parent="." instance=ExtResource( 20 )]
+transform = Transform( -1, -2.82187e-07, -1.62921e-07, 0, 0.5, -0.866025, 3.25841e-07, -0.866025, -0.5, 6, 1.23342, 27.3 )
+
+[node name="SchoolBook004" parent="." instance=ExtResource( 25 )]
+transform = Transform( 1, 0, 0, 0, 0.5, -0.866025, 0, 0.866025, 0.5, 8.37696, 1.23342, 28.487 )
+
+[node name="SchoolBook005" parent="." instance=ExtResource( 20 )]
+transform = Transform( -1, -2.82187e-07, -1.62921e-07, 0, 0.5, -0.866025, 3.25841e-07, -0.866025, -0.5, 8.37696, 1.23342, 27.3 )
+
+[node name="SchoolBook006" parent="." instance=ExtResource( 25 )]
+transform = Transform( 1, 0, 0, 0, 0.5, -0.866025, 0, 0.866025, 0.5, 10.6556, 1.23342, 28.487 )
+
+[node name="SchoolBook007" parent="." instance=ExtResource( 20 )]
+transform = Transform( -1, -2.82187e-07, -1.62921e-07, 0, 0.5, -0.866025, 3.25841e-07, -0.866025, -0.5, 10.6556, 1.23342, 27.3 )
+
+[node name="SchoolBook008" parent="." instance=ExtResource( 25 )]
+transform = Transform( -1, -7.57103e-08, -4.37114e-08, 0, 0.5, -0.866025, 8.74228e-08, -0.866025, -0.5, 3.51747, 1.23342, 27.3 )
+
+[node name="SchoolBook009" parent="." instance=ExtResource( 20 )]
+transform = Transform( 1, 3.57897e-07, 2.06632e-07, 0, 0.5, -0.866025, -4.13264e-07, 0.866025, 0.5, 3.51747, 1.23342, 28.487 )
+
+[node name="SchoolBook010" parent="." instance=ExtResource( 25 )]
+transform = Transform( 1, 0, 0, 0, 0.5, -0.866025, 0, 0.866025, 0.5, 1.00693, 1.23342, 28.487 )
+
+[node name="SchoolBook011" parent="." instance=ExtResource( 20 )]
+transform = Transform( -1, -2.82187e-07, -1.62921e-07, 0, 0.5, -0.866025, 3.25841e-07, -0.866025, -0.5, 1.00693, 1.23342, 27.3 )
+
+[node name="SchoolBook012" parent="." instance=ExtResource( 25 )]
+transform = Transform( 1, 0, 0, 0, 0.5, -0.866025, 0, 0.866025, 0.5, -1.82358, 1.23342, 28.487 )
+
+[node name="SchoolBook013" parent="." instance=ExtResource( 20 )]
+transform = Transform( -1, -2.82187e-07, -1.62921e-07, 0, 0.5, -0.866025, 3.25841e-07, -0.866025, -0.5, -1.82358, 1.23342, 27.3 )
+
+[node name="SchoolBook014" parent="." instance=ExtResource( 25 )]
+transform = Transform( -1, -7.57103e-08, -4.37114e-08, 0, 0.5, -0.866025, 8.74228e-08, -0.866025, -0.5, -4.81879, 1.23342, 27.3 )
+
+[node name="SchoolBook015" parent="." instance=ExtResource( 20 )]
+transform = Transform( 1, 3.57897e-07, 2.06632e-07, 0, 0.5, -0.866025, -4.13264e-07, 0.866025, 0.5, -4.81879, 1.23342, 28.487 )
+
+[node name="SchoolBook016" parent="." instance=ExtResource( 25 )]
+transform = Transform( -1, -7.57103e-08, -4.37114e-08, 0, 0.5, -0.866025, 8.74228e-08, -0.866025, -0.5, -7.71729, 1.23342, 27.3 )
+
+[node name="SchoolBook017" parent="." instance=ExtResource( 20 )]
+transform = Transform( 1, 3.57897e-07, 2.06632e-07, 0, 0.5, -0.866025, -4.13264e-07, 0.866025, 0.5, -7.71729, 1.23342, 28.487 )
+
+[node name="Clock" parent="." instance=ExtResource( 15 )]
+transform = Transform( -1.62921e-07, -1, -1.62921e-07, 0, -1.62921e-07, 1, -1, 1.62921e-07, 2.65431e-14, -10.0822, 0.354, 27.9435 )
+
+[node name="Classroom" type="Spatial" parent="."]
+
+[node name="Wall" parent="Classroom" instance=ExtResource( 47 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -4 )
+
+[node name="WallUpper" parent="Classroom" instance=ExtResource( 49 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -4 )
+
+[node name="WallUpper2" parent="Classroom" instance=ExtResource( 49 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -4 )
+
+[node name="WallUpper3" parent="Classroom" instance=ExtResource( 49 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, -4 )
+
+[node name="WallUpper4" parent="Classroom" instance=ExtResource( 49 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25, 0, -1 )
+
+[node name="WallUpper5" parent="Classroom" instance=ExtResource( 49 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25, 0, 5 )
+
+[node name="WallUpper6" parent="Classroom" instance=ExtResource( 49 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25, 0, 11 )
+
+[node name="WallUpper7" parent="Classroom" instance=ExtResource( 49 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25, 0, 17 )
+
+[node name="WallUpper8" parent="Classroom" instance=ExtResource( 49 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25, 0, 23 )
+
+[node name="WallUpper9" parent="Classroom" instance=ExtResource( 49 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25, 0, 29 )
+
+[node name="WallUpper10" parent="Classroom" instance=ExtResource( 49 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -22, 0, 32 )
+
+[node name="WallUpper11" parent="Classroom" instance=ExtResource( 49 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -19, 0, 35 )
+
+[node name="WallUpper12" parent="Classroom" instance=ExtResource( 49 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -16, 0, 38 )
+
+[node name="WallUpper13" parent="Classroom" instance=ExtResource( 49 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -10, 0, 38 )
+
+[node name="WallUpper14" parent="Classroom" instance=ExtResource( 49 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4, 0, 38 )
+
+[node name="WallUpper15" parent="Classroom" instance=ExtResource( 49 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2, 0, 38 )
+
+[node name="WallUpper16" parent="Classroom" instance=ExtResource( 49 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 8, 0, 38 )
+
+[node name="WallUpper17" parent="Classroom" instance=ExtResource( 49 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 14, 0, 38 )
+
+[node name="WallUpper18" parent="Classroom" instance=ExtResource( 49 )]
+transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 17, 0, 35 )
+
+[node name="WallUpper19" parent="Classroom" instance=ExtResource( 49 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 20, 0, 32 )
+
+[node name="WallUpper20" parent="Classroom" instance=ExtResource( 49 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 26, 0, 32 )
+
+[node name="WallUpper21" parent="Classroom" instance=ExtResource( 49 )]
+transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 28, 0, 29 )
+
+[node name="WallUpper22" parent="Classroom" instance=ExtResource( 49 )]
+transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 28, 0, 23 )
+
+[node name="WallUpper23" parent="Classroom" instance=ExtResource( 49 )]
+transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 28, 0, 17 )
+
+[node name="WallUpper24" parent="Classroom" instance=ExtResource( 49 )]
+transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 28, 0, 11 )
+
+[node name="WallUpper25" parent="Classroom" instance=ExtResource( 49 )]
+transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 28, 0, 5 )
+
+[node name="WallUpper26" parent="Classroom" instance=ExtResource( 49 )]
+transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 28, 0, -1 )
+
+[node name="Wall8" parent="Classroom" instance=ExtResource( 47 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -4 )
+
+[node name="Wall9" parent="Classroom" instance=ExtResource( 47 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, -4 )
+
+[node name="Wall10" parent="Classroom" instance=ExtResource( 47 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25, 0, -1 )
+
+[node name="Wall11" parent="Classroom" instance=ExtResource( 47 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25, 0, 5 )
+
+[node name="Wall12" parent="Classroom" instance=ExtResource( 47 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25, 0, 11 )
+
+[node name="Wall13" parent="Classroom" instance=ExtResource( 47 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25, 0, 17 )
+
+[node name="Wall14" parent="Classroom" instance=ExtResource( 47 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25, 0, 23 )
+
+[node name="Wall15" parent="Classroom" instance=ExtResource( 47 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25, 0, 29 )
+
+[node name="Wall16" parent="Classroom" instance=ExtResource( 47 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -22, 0, 32 )
+
+[node name="Wall17" parent="Classroom" instance=ExtResource( 47 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -19, 0, 35 )
+
+[node name="Wall18" parent="Classroom" instance=ExtResource( 47 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -16, 0, 38 )
+
+[node name="Wall19" parent="Classroom" instance=ExtResource( 47 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -10, 0, 38 )
+
+[node name="Wall20" parent="Classroom" instance=ExtResource( 47 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4, 0, 38 )
+
+[node name="Wall21" parent="Classroom" instance=ExtResource( 47 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2, 0, 38 )
+
+[node name="Wall22" parent="Classroom" instance=ExtResource( 47 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 8, 0, 38 )
+
+[node name="Wall23" parent="Classroom" instance=ExtResource( 47 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 14, 0, 38 )
+
+[node name="Wall24" parent="Classroom" instance=ExtResource( 47 )]
+transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 17, 0, 35 )
+
+[node name="Wall25" parent="Classroom" instance=ExtResource( 47 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 20, 0, 32 )
+
+[node name="Wall26" parent="Classroom" instance=ExtResource( 47 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 26, 0, 32 )
+
+[node name="Wall2" parent="Classroom" instance=ExtResource( 47 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 28, 0, -1 )
+
+[node name="Wall3" parent="Classroom" instance=ExtResource( 47 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 28, 0, 5 )
+
+[node name="Wall4" parent="Classroom" instance=ExtResource( 47 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 28, 0, 11 )
+
+[node name="Wall5" parent="Classroom" instance=ExtResource( 47 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 28, 0, 17 )
+
+[node name="Wall6" parent="Classroom" instance=ExtResource( 47 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 28, 0, 23 )
+
+[node name="Wall7" parent="Classroom" instance=ExtResource( 47 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 28, 0, 29 )
+
+[node name="WallWindow" parent="Classroom" instance=ExtResource( 48 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -4 )
+
+[node name="WallWindow2" parent="Classroom" instance=ExtResource( 48 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -4 )
+
+[node name="WallWindow3" parent="Classroom" instance=ExtResource( 48 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -4 )
+
+[node name="WallUpper27" parent="Classroom" instance=ExtResource( 49 )]
+transform = Transform( -1.62921e-06, 10, -1.62921e-07, 0, -1.62921e-06, -1, -10, -1.62921e-06, 2.65431e-14, -127, -0.288, 13 )
+
+[node name="SchoolBag002" parent="." instance=ExtResource( 6 )]
+transform = Transform( -0.707107, -0.321482, 0.629801, 0, 0.890673, 0.454644, -0.707107, 0.321482, -0.629801, 12.5998, 0.0221257, 31.24 )
+
+[node name="SchoolBag012" parent="." instance=ExtResource( 6 )]
+transform = Transform( -0.843663, 0.244086, -0.478178, 0, 0.890673, 0.454644, 0.536873, 0.383566, -0.751428, 20.0082, 0.0221261, 22.5386 )
+
+[node name="SchoolBag013" parent="." instance=ExtResource( 6 )]
+transform = Transform( 0.843663, -0.244086, 0.478178, 0, 0.890673, 0.454644, -0.536873, -0.383566, 0.751428, 22.7953, 0.0221261, 26.8857 )
+
+[node name="SchoolBag001" parent="." instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 0.98023, 0.197863, 0, -0.197863, 0.98023, 19.3864, 0.0119765, 13.5617 )
+
+[node name="SchoolBag008" parent="." instance=ExtResource( 17 )]
+transform = Transform( -0.536873, -0.28855, 0.792784, 0, 0.939693, 0.34202, -0.843663, 0.183621, -0.504495, 22.1426, 0.0119765, 24.2401 )
+
+[node name="SchoolBag011" parent="." instance=ExtResource( 17 )]
+transform = Transform( 0.536873, 0.28855, -0.792784, 0, 0.939693, 0.34202, 0.843663, -0.183621, 0.504495, 20.5877, 0.0119765, 25.2079 )
+
+[node name="SchoolBag003" parent="." instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 0.98023, 0.197863, 0, -0.197863, 0.98023, 10.1837, 0.0119765, 13.5617 )
+
+[node name="SchoolBag004" parent="." instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 0.98023, 0.197863, 0, -0.197863, 0.98023, 1.17597, 0.0119765, 13.5617 )
+
+[node name="SchoolBag009" parent="." instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 0.98023, 0.197863, 0, -0.197863, 0.98023, 10.1837, 0.0119765, 1.86475 )
+
+[node name="SchoolBag010" parent="." instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 0.98023, 0.197863, 0, -0.197863, 0.98023, 1.17597, 0.0119765, 1.86475 )
+
+[node name="SchoolBag006" parent="." instance=ExtResource( 17 )]
+transform = Transform( -4.37114e-08, -0.197863, 0.98023, 0, 0.98023, 0.197863, -1, 8.64885e-09, -4.28472e-08, 0.752921, 0.0119765, 21.9207 )
+
+[node name="SchoolBag005" parent="." instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 0.98023, 0.197863, 0, -0.197863, 0.98023, -8.20068, 0.0119765, 13.5617 )
+
+[node name="SchoolBag014" parent="." instance=ExtResource( 17 )]
+transform = Transform( -1, 1.72977e-08, -8.56944e-08, 0, 0.98023, 0.197863, 8.74228e-08, 0.197863, -0.98023, -11.4495, 0.0119765, 31.5162 )
+
+[node name="SchoolBag015" parent="." instance=ExtResource( 17 )]
+transform = Transform( -1, 1.72977e-08, -8.56944e-08, 0, 0.98023, 0.197863, 8.74228e-08, 0.197863, -0.98023, -2.07288, 0.0119765, 31.5162 )
+
+[node name="SchoolBag007" parent="." instance=ExtResource( 17 )]
+transform = Transform( -0.576161, -0.817336, -1.33161e-07, 0, -1.62921e-07, 1, -0.817336, 0.576161, 9.38686e-08, -7.04017, 5.40475, -1.34027 )
+
+[node name="Pencil001" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0.037, 12.67 )
+
+[node name="Pencil002" parent="." instance=ExtResource( 39 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0.037, 13.436 )
+
+[node name="Pencil003" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0.037, 11.2147 )
+
+[node name="Pencil004" parent="." instance=ExtResource( 39 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0.037, 11.9807 )
+
+[node name="Pencil005" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0.037, 9.64701 )
+
+[node name="Pencil006" parent="." instance=ExtResource( 39 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0.037, 10.413 )
+
+[node name="Pencil007" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0.037, 7.86155 )
+
+[node name="Pencil008" parent="." instance=ExtResource( 39 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0.037, 8.62755 )
+
+[node name="Pencil009" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0.037, 6.29592 )
+
+[node name="Pencil010" parent="." instance=ExtResource( 39 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0.037, 7.06192 )
+
+[node name="Pencil011" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.9618, 0.037, 12.2696 )
+
+[node name="Pencil012" parent="." instance=ExtResource( 39 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.9618, 0.037, 13.0356 )
+
+[node name="Pencil013" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.9618, 0.037, 10.8144 )
+
+[node name="Pencil014" parent="." instance=ExtResource( 39 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.9618, 0.037, 11.5803 )
+
+[node name="Pencil015" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.9618, 0.037, 9.24662 )
+
+[node name="Pencil016" parent="." instance=ExtResource( 39 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.9618, 0.037, 10.0126 )
+
+[node name="Pencil017" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.9618, 0.037, 7.46116 )
+
+[node name="Pencil018" parent="." instance=ExtResource( 39 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.9618, 0.037, 8.22716 )
+
+[node name="Pencil019" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.9618, 0.037, 5.89553 )
+
+[node name="Pencil020" parent="." instance=ExtResource( 39 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.9618, 0.037, 6.66153 )
+
+[node name="Pencil021" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.0401, 0.037, 12.2696 )
+
+[node name="Pencil022" parent="." instance=ExtResource( 39 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.0401, 0.037, 13.0356 )
+
+[node name="Pencil023" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.0401, 0.037, 10.8144 )
+
+[node name="Pencil024" parent="." instance=ExtResource( 39 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.0401, 0.037, 11.5803 )
+
+[node name="Pencil025" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.0401, 0.037, 9.24662 )
+
+[node name="Pencil026" parent="." instance=ExtResource( 39 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.0401, 0.037, 10.0126 )
+
+[node name="Pencil027" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.0401, 0.037, 7.46116 )
+
+[node name="Pencil028" parent="." instance=ExtResource( 39 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.0401, 0.037, 8.22716 )
+
+[node name="Pencil029" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.0401, 0.037, 5.89553 )
+
+[node name="Pencil030" parent="." instance=ExtResource( 39 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.0401, 0.037, 6.66153 )
+
+[connection signal="tree_exited" from="Presentation" to="." method="_on_Presentation_tree_exited"]
