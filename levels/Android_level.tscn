@@ -66,19 +66,19 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 8, 16.5 )
 
 [node name="DYN_OBJ" type="Spatial" parent="."]
 
-[node name="BeegWorld" type="Spatial" parent="DYN_OBJ"]
+[node name="BigWorld" type="Spatial" parent="DYN_OBJ"]
 transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0 )
 
-[node name="GreenHillLarge004" parent="DYN_OBJ/BeegWorld" instance=ExtResource( 5 )]
+[node name="GreenHillLarge004" parent="DYN_OBJ/BigWorld" instance=ExtResource( 5 )]
 transform = Transform( 2.99435, 0, 0.183982, 0, 3, 0, -0.183982, 0, 2.99435, -85.6619, -17.2223, -25.2552 )
 
-[node name="GreenHillHuge001" parent="DYN_OBJ/BeegWorld" instance=ExtResource( 11 )]
+[node name="GreenHillHuge001" parent="DYN_OBJ/BigWorld" instance=ExtResource( 11 )]
 transform = Transform( 3.84471, 0, 3.19659, 0, 5, 0, -3.19659, 0, 3.84471, -49.2591, -24.7293, -86.5909 )
 
-[node name="GreenHillLarge003" parent="DYN_OBJ/BeegWorld" instance=ExtResource( 5 )]
+[node name="GreenHillLarge003" parent="DYN_OBJ/BigWorld" instance=ExtResource( 5 )]
 transform = Transform( -0.349249, 0, -3.98472, 0, 4, 0, 3.98472, 0, -0.349249, 52.4185, -6.71338, -105.627 )
 
-[node name="GreenPlateauTiny003" parent="DYN_OBJ/BeegWorld" instance=ExtResource( 21 )]
+[node name="GreenPlateauTiny003" parent="DYN_OBJ/BigWorld" instance=ExtResource( 21 )]
 transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 5, -1.96818, -6.21703, -19.5249 )
 
 [node name="Desks" type="Spatial" parent="DYN_OBJ"]
